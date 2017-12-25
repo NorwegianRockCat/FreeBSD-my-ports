@@ -2,10 +2,13 @@
 
 PORTNAME=	ros-rosdep
 DISTVERSION=	0.11.8
+CATEGORIES=	devel
+
 MAINTAINER=	trentonw@ifi.uio.no
 COMMENT=	Multi-package manager system dependency tool for ROS
-CATEGORIES=	devel
+
 LICENSE=	BSD3CLAUSE
+
 WWW=	http://docs.ros.org/independent/api/rosdep/html/
 USES=	python
 USE_PYHTON=	distutils autoplist
