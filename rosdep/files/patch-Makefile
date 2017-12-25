@@ -1,0 +1,11 @@
+--- Makefile.orig	2017-12-25 22:02:03 UTC
++++ Makefile
+@@ -21,7 +21,7 @@ clean: clean_dist
+ 	echo "clean"
+ 
+ install: distro
+-	sudo checkinstall python setup.py install
++	sudo python setup.py install
+ 
+ testsetup:
+ 	echo "running rosdep tests"
