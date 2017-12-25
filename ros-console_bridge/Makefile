@@ -2,10 +2,13 @@
 
 PORTNAME=	ros-console_bridge
 DISTVERSION=	0.4.0
-MAINTAINER=	trentonw@ifi.uio.no
-COMMENT=	A ROS-independent package for logging that seamlessly pipes into rosconsole/rosout for ROS-dependent packages.
 CATEGORIES=	sysutils
+
+MAINTAINER=	trentonw@ifi.uio.no
+COMMENT=	ROS-independent logging that pipes into ROS packages
+
 LICENSE=	BSD3CLAUSE
+
 WWW=	https://github.com/ros/console_bridge
 USES=	cmake:outsource
 USE_GITHUB=	yes

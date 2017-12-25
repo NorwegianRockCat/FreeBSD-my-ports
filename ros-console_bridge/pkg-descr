@@ -6,4 +6,4 @@ ROS-dependent packages.
 This package is independent of ROS. That is, it doesn't require any
 other parts of ROS.
 
-GitHub: https://github.com/ros/console_bridge
+WWW: https://github.com/ros/console_bridge
