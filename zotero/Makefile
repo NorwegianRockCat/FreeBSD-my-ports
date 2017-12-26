@@ -12,14 +12,21 @@ LICENSE=	AGPLv3
 
 WWW=	https://www.zotero.org
 USE_GITHUB=	YES
-GH_ACCOUNT=	zotero:build,standalonebuild
-GH_PROJECT=	zotero-build:build zotero-standalone-build:standalonebuild
-GH_TAGNAME=	b330e8e:build 5.0.26:standalonebuild
+GH_TUPLE=	zotero:zotero-build:b330e8e:build \
+		zotero:zotero-standalone-build:5.0.26:standalonebuild \
+		zotero:translators:8a9cf2d:translators/translators \
+		zotero:bundled-styles:665b7f5:styles/styles \
+		citation-style-language:locales:ed11f07:csl/chrome/content/zotero/locale/csl \
 
 BUILD_DEPENDS=	bash:shells/bash \
 		npm:www/npm \
 
 PATCH_WRKSRC	= ${WRKSRC_standalonebuild}
 USE_FIREFOX_BUILD=	52
+
+do-configure:
+	cd ${WRKSRC} && \
+		npm i
+
 
 .include <bsd.port.mk>
