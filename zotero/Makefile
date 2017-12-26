@@ -18,8 +18,8 @@ GH_TAGNAME=	b330e8e:build 5.0.26:standalonebuild
 
 BUILD_DEPENDS=	bash:shells/bash \
 		npm:www/npm \
-		git:devel/git
 
+PATCH_WRKSRC	= ${WRKSRC_standalonebuild}
 USE_FIREFOX_BUILD=	52
 
 .include <bsd.port.mk>
