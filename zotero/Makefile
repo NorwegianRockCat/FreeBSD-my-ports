@@ -17,7 +17,10 @@ GH_TUPLE=	zotero:zotero-build:b330e8e:build \
 		zotero:translators:8a9cf2d:translators/translators \
 		zotero:bundled-styles:665b7f5:styles/styles \
 		citation-style-language:locales:ed11f07:csl/chrome/content/zotero/locale/csl \
-		egh:zotero-transfw:b820c6d:transfw
+		egh:zotero-transfw:b820c6d:transfw \
+		zotero:zotero-libreoffice-integration:c1f6d8d:libreoffice \
+		zotero:zotero-word-for-mac-integration:b9e1527:macword \
+		zotero:zotero-word-for-windows-integration:106f9e41:winword
 
 BUILD_DEPENDS=	bash:shells/bash \
 		npm:www/npm \
@@ -26,11 +29,25 @@ PATCH_WRKSRC	= ${WRKSRC_standalonebuild}
 USE_FIREFOX_BUILD=	52
 
 post-extract:
-	${MV} ${WRKSRC_transfw} ${WRKSRC_build}/xpi/zotero-transfw
+	${MV} ${WRKSRC_transfw}/* ${WRKSRC_build}/xpi/zotero-transfw
+	${MV} ${WRKSRC_libreoffice}/* ${WRKSRC_standalonebuild}/modules/zotero-libreoffice-integration
+	${MV} ${WRKSRC_winword}/* ${WRKSRC_standalonebuild}/modules/zotero-word-for-windows-integration
+	${MV} ${WRKSRC_macword}/* ${WRKSRC_standalonebuild}/modules/zotero-word-for-mac-integration
+	${LN} -s ${WRKSRC} zotero-client
+	${LN} -s ${WRKSRC_build} zotero-build
 
 do-configure:
 	cd ${WRKSRC} && \
 		npm i
+
+do-build:
+	cd ${WRKSRC} && \
+		npm run build
+	cd ${WRKSRC_standalonebuild} && \
+		./fetch_xulrunner.sh -p f
+	cd ${WRKSRC_standalonebuild} && \
+		./scripts/dir_build
+
 
 
 .include <bsd.port.mk>

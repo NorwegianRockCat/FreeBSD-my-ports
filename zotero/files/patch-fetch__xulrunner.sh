@@ -48,7 +48,7 @@
 +
 +
 +if [ $BUILD_FREEBSD == 1 ]; then
-+	GECKO_VERSION="esr-52.4.1_5,1" 
++	GECKO_VERSION="esr-52.5.0_1,1"
 +	DOWNLOAD_URL="https://ftp.mozilla.org/pub/firefox/releases/$GECKO_VERSION"
 +	rm -rf firefox
 +	rm -rf freebsd-pkg-foo
