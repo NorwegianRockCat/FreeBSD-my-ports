@@ -26,7 +26,7 @@
          
          # Write translator index as JSON file
 -        with open(os.path.join(tmp_src_dir, 'translators.json'), 'w') as f:
-+        with open(os.path.join(tmp_src_dir, 'translators.json'), 'w', enconding='utf8') as f:
++        with open(os.path.join(tmp_src_dir, 'translators.json'), 'w', encoding='utf8') as f:
              json.dump(index, f, indent=True, ensure_ascii=False)
          
          install_file = os.path.join(tmp_src_dir, 'install.rdf')
