@@ -17,12 +17,16 @@ GH_TUPLE=	zotero:zotero-build:b330e8e:build \
 		zotero:translators:8a9cf2d:translators/translators \
 		zotero:bundled-styles:665b7f5:styles/styles \
 		citation-style-language:locales:ed11f07:csl/chrome/content/zotero/locale/csl \
+		egh:zotero-transfw:b820c6d:transfw
 
 BUILD_DEPENDS=	bash:shells/bash \
 		npm:www/npm \
 
 PATCH_WRKSRC	= ${WRKSRC_standalonebuild}
 USE_FIREFOX_BUILD=	52
+
+post-extract:
+	${MV} ${WRKSRC_transfw} ${WRKSRC_build}/xpi/zotero-transfw
 
 do-configure:
 	cd ${WRKSRC} && \
