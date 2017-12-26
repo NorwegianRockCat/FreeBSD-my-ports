@@ -40,7 +40,7 @@
  	usage
  fi
  
-@@ -159,6 +161,26 @@ if [ $BUILD_WIN32 == 1 ]; then
+@@ -159,6 +161,27 @@ if [ $BUILD_WIN32 == 1 ]; then
  	cd ..
  	
  	rm "Firefox%20Setup%20$GECKO_VERSION.exe"
@@ -58,16 +58,17 @@
 +	mkdir freebsd-pkg-foo
 +	tar -xf /usr/local/tmp/firefox-$GECKO_VERSION.txz --strip-components 3 -C freebsd-pkg-foo
 +	mv freebsd-pkg-foo/lib/firefox firefox
-+	rm -rf firefox-x86_64
-+	mv firefox firefox-x86_64
-+	cd firefox-x86_64
++	arch=amd64
++	rm -rf firefox-$arch
++	mv firefox firefox-$arch
++	cd firefox-$arch
 +	modify_omni
 +	extract_devtools
 +	cd ..
  fi
  
  if [ $BUILD_LINUX == 1 ]; then
-@@ -187,4 +209,4 @@ if [ $BUILD_LINUX == 1 ]; then
+@@ -187,4 +210,4 @@ if [ $BUILD_LINUX == 1 ]; then
  	rm "firefox-$GECKO_VERSION.tar.bz2"
  fi
  

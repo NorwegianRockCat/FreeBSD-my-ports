@@ -41,8 +41,8 @@
 +
 +# FreeBSD
 +if [ $BUILD_FREEBSD == 1 ]; then
-+	for arch in "x86_64"; do
-+		RUNTIME_PATH=`eval echo '$LINUX_'$arch'_RUNTIME_PATH'`
++	for arch in "amd64"; do
++		RUNTIME_PATH=`eval echo '$FREEBSD_'$arch'_RUNTIME_PATH'`
 +		
 +		# Set up directory
 +		echo 'Building Zotero_freebsd-'$arch

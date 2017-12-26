@@ -1,4 +1,4 @@
---- zotero-standalone-build-5.0.26/modules/zotero-libreoffice-integration/scripts/symlink_sdk.orig	2017-12-26 17:30:44 UTC
+--- zotero-standalone-build-5.0.26/modules/zotero-libreoffice-integration/scripts/symlink_sdk.orig	2017-07-21 14:50:43 UTC
 +++ zotero-standalone-build-5.0.26/modules/zotero-libreoffice-integration/scripts/symlink_sdk
 @@ -1,4 +1,4 @@
 -#!/bin/bash
