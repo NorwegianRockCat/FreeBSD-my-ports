@@ -26,7 +26,10 @@ BUILD_DEPENDS=	bash:shells/bash \
 		npm:www/npm \
 
 PATCH_WRKSRC	= ${WRKSRC_standalonebuild}
+#USES=shebangfix
+#SHEBANG_FILES= symlink_sdk
 USE_FIREFOX_BUILD=	52
+INSTALL_TARGET=install-strip
 
 post-extract:
 	${MV} ${WRKSRC_transfw}/* ${WRKSRC_build}/xpi/zotero-transfw
@@ -48,6 +51,10 @@ do-build:
 	cd ${WRKSRC_standalonebuild} && \
 		./scripts/dir_build
 
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/zotero
+	(cd ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH} && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/lib/zotero)
+	${LN} -sf ${STAGEDIR}${PREFIX}/lib/zotero/zotero ${STAGEDIR}${PREFIX}/bin/zotero
 
 
 .include <bsd.port.mk>
