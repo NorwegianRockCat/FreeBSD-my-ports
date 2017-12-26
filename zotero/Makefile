@@ -16,6 +16,10 @@ GH_ACCOUNT=	zotero:build,standalonebuild
 GH_PROJECT=	zotero-build:build zotero-standalone-build:standalonebuild
 GH_TAGNAME=	b330e8e:build 5.0.26:standalonebuild
 
+BUILD_DEPENDS=	bash:shells/bash \
+		npm:www/npm \
+		git:devel/git
+
 USE_FIREFOX_BUILD=	52
 
 .include <bsd.port.mk>
