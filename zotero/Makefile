@@ -33,8 +33,8 @@ post-extract:
 	${MV} ${WRKSRC_libreoffice}/* ${WRKSRC_standalonebuild}/modules/zotero-libreoffice-integration
 	${MV} ${WRKSRC_winword}/* ${WRKSRC_standalonebuild}/modules/zotero-word-for-windows-integration
 	${MV} ${WRKSRC_macword}/* ${WRKSRC_standalonebuild}/modules/zotero-word-for-mac-integration
-	${LN} -s ${WRKSRC} zotero-client
-	${LN} -s ${WRKSRC_build} zotero-build
+	${LN} -s ${WRKSRC} ${WRKDIR}/zotero-client
+	${LN} -s ${WRKSRC_build} ${WRKDIR}/zotero-build
 
 do-configure:
 	cd ${WRKSRC} && \
