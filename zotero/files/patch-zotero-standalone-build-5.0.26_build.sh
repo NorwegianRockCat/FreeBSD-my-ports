@@ -1,12 +1,12 @@
---- build.sh.orig	2017-12-25 18:50:12.833158000 -0600
-+++ build.sh	2017-12-25 18:50:39.323966000 -0600
+--- zotero-standalone-build-5.0.26/build.sh.orig	2017-11-16 10:50:21 UTC
++++ zotero-standalone-build-5.0.26/build.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash -e
 +#!/usr/local/bin/bash -e
  
  # Copyright (c) 2011  Zotero
  #                     Center for History and New Media
-@@ -61,6 +61,7 @@
+@@ -61,6 +61,7 @@ ZIP_FILE=""
  BUILD_MAC=0
  BUILD_WIN32=0
  BUILD_LINUX=0
@@ -14,7 +14,7 @@
  PACKAGE=1
  DEVTOOLS=0
  while getopts "d:f:p:c:ts" opt; do
-@@ -77,6 +78,7 @@
+@@ -77,6 +78,7 @@ while getopts "d:f:p:c:ts" opt; do
  				case ${OPTARG:i:1} in
  					m) BUILD_MAC=1;;
  					w) BUILD_WIN32=1;;
@@ -22,7 +22,7 @@
  					l) BUILD_LINUX=1;;
  					*)
  						echo "$0: Invalid platform option ${OPTARG:i:1}"
-@@ -109,7 +111,7 @@
+@@ -109,7 +111,7 @@ elif [[ -n "$SOURCE_DIR" ]] && [[ -n "$ZIP_FILE" ]]; t
  fi
  
  # Require at least one platform
@@ -31,7 +31,7 @@
  	usage
  fi
  
-@@ -503,6 +505,71 @@
+@@ -503,6 +505,71 @@ if [ $BUILD_LINUX == 1 ]; then
  			rm -f "$DIST_DIR/Zotero-${VERSION}_linux-$arch.tar.bz2"
  			cd "$STAGE_DIR"
  			tar -cjf "$DIST_DIR/Zotero-${VERSION}_linux-$arch.tar.bz2" "Zotero_linux-$arch"

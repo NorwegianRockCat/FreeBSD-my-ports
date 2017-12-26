@@ -1,0 +1,8 @@
+--- zotero-standalone-build-5.0.26/modules/zotero-libreoffice-integration/scripts/symlink_sdk.orig	2017-12-26 17:30:44 UTC
++++ zotero-standalone-build-5.0.26/modules/zotero-libreoffice-integration/scripts/symlink_sdk
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ 
+ CWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ SYMLINK_LOCATION="$CWD/../build/lib/libreoffice-sdk"

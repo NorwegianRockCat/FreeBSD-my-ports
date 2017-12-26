@@ -3,7 +3,7 @@
 
 PORTNAME=	zotero
 PORTVERSION=	5.0.28
-CATEGORIES=	print
+CATEGORIES=	deskutils
 
 MAINTAINER=	trentonw@ifi.uio.no
 COMMENT=	Tool to collect, organize, cite, and share your research sources.
@@ -25,9 +25,7 @@ GH_TUPLE=	zotero:zotero-build:b330e8e:build \
 BUILD_DEPENDS=	bash:shells/bash \
 		npm:www/npm \
 
-PATCH_WRKSRC	= ${WRKSRC_standalonebuild}
-#USES=shebangfix
-#SHEBANG_FILES= symlink_sdk
+PATCH_WRKSRC	= ${WRKDIR}
 USE_FIREFOX_BUILD=	52
 INSTALL_TARGET=install-strip
 

@@ -1,12 +1,12 @@
---- scripts/dir_build.orig	2017-12-25 18:52:06.267508000 -0600
-+++ scripts/dir_build	2017-12-25 18:52:23.425902000 -0600
+--- zotero-standalone-build-5.0.26/scripts/dir_build.orig	2017-11-16 10:50:21 UTC
++++ zotero-standalone-build-5.0.26/scripts/dir_build
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash -e
  set -euo pipefail
  
  SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-@@ -28,6 +28,7 @@
+@@ -28,6 +28,7 @@ while getopts "p:t" opt; do
  				case ${OPTARG:i:1} in
  					m) PLATFORM="m";;
  					w) PLATFORM="w";;
@@ -14,7 +14,7 @@
  					l) PLATFORM="l";;
  					*)
  						echo "$0: Invalid platform option ${OPTARG:i:1}"
-@@ -46,6 +47,8 @@
+@@ -46,6 +47,8 @@ done
  if [[ -z $PLATFORM ]]; then
  	if [ "`uname`" = "Darwin" ]; then
  		PLATFORM="m"
@@ -23,7 +23,7 @@
  	elif [ "`uname`" = "Linux" ]; then
  		PLATFORM="l"
  	elif [ "`uname -o 2> /dev/null`" = "Cygwin" ]; then
-@@ -68,5 +71,6 @@
+@@ -68,5 +71,6 @@ else
  	hash=`git -C "$ZOTERO_SOURCE_DIR" rev-parse --short HEAD`
  	
  	"$ZOTERO_BUILD_DIR/xpi/build_xpi" -s "$ZOTERO_SOURCE_DIR/build" -c $CHANNEL -m $hash
