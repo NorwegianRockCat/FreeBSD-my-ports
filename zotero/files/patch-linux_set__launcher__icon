@@ -1,0 +1,8 @@
+--- linux/set_launcher_icon.orig	2017-12-25 18:51:25.894603000 -0600
++++ linux/set_launcher_icon	2017-12-25 18:51:37.626424000 -0600
+@@ -1,4 +1,4 @@
+-#!/bin/bash -e
++#!/usr/local/bin/bash -e
+ 
+ #
+ # Run this to update the launcher file with the current path to the application icon

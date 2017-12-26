@@ -1,0 +1,32 @@
+--- scripts/dir_build.orig	2017-12-25 18:52:06.267508000 -0600
++++ scripts/dir_build	2017-12-25 18:52:23.425902000 -0600
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash -e
+ set -euo pipefail
+ 
+ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+@@ -28,6 +28,7 @@
+ 				case ${OPTARG:i:1} in
+ 					m) PLATFORM="m";;
+ 					w) PLATFORM="w";;
++					f) PLATFORM="f";;
+ 					l) PLATFORM="l";;
+ 					*)
+ 						echo "$0: Invalid platform option ${OPTARG:i:1}"
+@@ -46,6 +47,8 @@
+ if [[ -z $PLATFORM ]]; then
+ 	if [ "`uname`" = "Darwin" ]; then
+ 		PLATFORM="m"
++	elif [ "`uname`" = "FreeBSD" ]; then
++		PLATFORM="f"
+ 	elif [ "`uname`" = "Linux" ]; then
+ 		PLATFORM="l"
+ 	elif [ "`uname -o 2> /dev/null`" = "Cygwin" ]; then
+@@ -68,5 +71,6 @@
+ 	hash=`git -C "$ZOTERO_SOURCE_DIR" rev-parse --short HEAD`
+ 	
+ 	"$ZOTERO_BUILD_DIR/xpi/build_xpi" -s "$ZOTERO_SOURCE_DIR/build" -c $CHANNEL -m $hash
++	echo "going to run:" "$ROOT_DIR/build.sh" -d "$ZOTERO_BUILD_DIR/xpi/build/staging" -p $PLATFORM -c $CHANNEL -s $PARAMS
+ 	"$ROOT_DIR/build.sh" -d "$ZOTERO_BUILD_DIR/xpi/build/staging" -p $PLATFORM -c $CHANNEL -s $PARAMS
+ fi
