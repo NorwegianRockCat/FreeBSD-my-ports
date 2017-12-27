@@ -32,11 +32,26 @@ LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l \
 		libvorbis.so:audio/libvorbis \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libdbus-1.so:devel/dbus \
-		libstartup-notification-1.so:x11/startup-notification
+		libstartup-notification-1.so:x11/startup-notification \
+		libicui18n.so:devel/icu \
+		libicuuc.so:devel/icu \
+		libffi.so:devel/libffi \
+		libplds4.so:devel/nspr \
+		libplc4.so:devel/nspr \
+		libnspr4.so:devel/nspr \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libpng16.so:graphics/png \
+		libhunspell-1.6.so:textproc/hunspell \
+		libevent-2.1.so.6:devel/libevent \
+		libvpx.so:multimedia/libvpx \
+		libssl3.so:security/nss \
+		libsmime3.so:security/nss \
+		libnss3.so:security/nss
 
-USE_XORG+=	xcb
-USE_GECKO=	gecko
-USE_MOZILLA=	libxul
+USES+=jpeg sqlite desktop-file-utils
+USE_XORG+=xt x11 xcb pixman xext xrender xdamage xfixes xcomposite
+USE_GNOME+=glib20 gtk20 atk pango gdkpixbuf2 cairo
 PATCH_WRKSRC	= ${WRKDIR}
 
 INSTALL_TARGET=	install-strip
@@ -65,8 +80,30 @@ pre-install:
 	${RM} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-amd64/extensions/zoteroOpenOfficeIntegration@zotero.org/scripts/symlink_sdk.orig
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/zotero
-	(cd ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH} && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/lib/zotero)
-	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ../lib/zotero/zotero zotero)
+.for dir in chrome components defaults dictionaries
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/zotero/${dir}
+	(cd ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/${dir} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/zotero/${dir})
+.endfor
+.for dir in extensions
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/zotero/${dir}
+	(cd ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/${dir} && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/share/zotero/${dir})
+.endfor
+.for bin in zotero-bin plugin-container
+	${INSTALL_PROGRAM} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/${bin} ${STAGEDIR}${PREFIX}/share/zotero
+.endfor
+.for lib in liblgpllibs.so libmozavcodec.so libmozavutil.so libxul.so
+	${INSTALL_LIB} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/${lib} ${STAGEDIR}${PREFIX}/share/zotero
+.endfor
+.for script in zotero
+	${INSTALL_SCRIPT} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/${script} ${STAGEDIR}${PREFIX}/share/zotero
+.endfor
+.for data in application.ini chrome.manifest dependentlibs.list omni.ja platform.ini updater.ini zotero.jar
+	${INSTALL_SCRIPT} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/${data} ${STAGEDIR}${PREFIX}/share/zotero
+.endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/zotero/gmp-clearkey/0.1
+	${INSTALL_DATA} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/gmp-clearkey/0.1/clearkey.info ${STAGEDIR}${PREFIX}/share/zotero/gmp-clearkey/0.1
+	${INSTALL_LIB} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/gmp-clearkey/0.1/libclearkey.so ${STAGEDIR}${PREFIX}/share/zotero/gmp-clearkey/0.1
+	${INSTALL_DATA} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/zotero.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${RLN} ${STAGEDIR}${PREFIX}/share/zotero/zotero ${STAGEDIR}${PREFIX}/bin/zotero
 
 .include <bsd.port.mk>
