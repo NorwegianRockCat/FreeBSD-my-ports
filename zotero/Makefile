@@ -6,7 +6,7 @@ PORTVERSION=	5.0.28
 CATEGORIES=	deskutils
 
 MAINTAINER=	trentonw@ifi.uio.no
-COMMENT=	Tool to collect, organize, cite, and share your research sources.
+COMMENT=	Tool to collect, organize, cite, and share your research sources
 
 LICENSE=	AGPLv3
 
@@ -22,12 +22,24 @@ GH_TUPLE=	zotero:zotero-build:b330e8e:build \
 		zotero:zotero-word-for-mac-integration:b9e1527:macword \
 		zotero:zotero-word-for-windows-integration:106f9e41:winword
 
-BUILD_DEPENDS=	bash:shells/bash \
+BUILD_DEPENDS+=	bash:shells/bash \
 		npm:www/npm \
 
+LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l \
+		libgraphite2.so:graphics/graphite2 \
+		libharfbuzz.so:print/harfbuzz \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libdbus-1.so:devel/dbus \
+		libstartup-notification-1.so:x11/startup-notification
+
+USE_XORG+=	xcb
+USE_GECKO=	gecko
+USE_MOZILLA=	libxul
 PATCH_WRKSRC	= ${WRKDIR}
-USE_FIREFOX_BUILD=	52
-INSTALL_TARGET=install-strip
+
+INSTALL_TARGET=	install-strip
 
 post-extract:
 	${MV} ${WRKSRC_transfw}/* ${WRKSRC_build}/xpi/zotero-transfw
@@ -49,10 +61,12 @@ do-build:
 	cd ${WRKSRC_standalonebuild} && \
 		./scripts/dir_build
 
+pre-install:
+	${RM} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-amd64/extensions/zoteroOpenOfficeIntegration@zotero.org/scripts/symlink_sdk.orig
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/zotero
 	(cd ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH} && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/lib/zotero)
-	${LN} -sf ${STAGEDIR}${PREFIX}/lib/zotero/zotero ${STAGEDIR}${PREFIX}/bin/zotero
-
+	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ../lib/zotero/zotero zotero)
 
 .include <bsd.port.mk>
