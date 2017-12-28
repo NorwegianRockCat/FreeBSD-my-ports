@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [ $2 == "POST-INSTALL" ]; then
+    sed -i -e "s@^Icon=.*@Icon=$PKG_PREFIX/share/zotero/chrome/icons/default/default256.png@" "$PKG_PREFIX"/share/applications/zotero.desktop
+fi
