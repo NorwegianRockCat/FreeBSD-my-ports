@@ -52,7 +52,7 @@
 -        portname = p + "-\*"
 -    pop = subprocess.Popen("/usr/sbin/pkg_info -qE " + portname, shell=True)
 -    return os.waitpid(pop.pid, 0)[1] == 0 # pkg_info -E returns 0 if pkg installed, 1 if not
-+    cmd = ['/usr/bin/pkg', 'query', '%n', p]
++    cmd = ['/usr/sbin/pkg', 'query', '%n', p]
 +    std_out = exec_fn(cmd)
 +    return std_out.split() != []
  
