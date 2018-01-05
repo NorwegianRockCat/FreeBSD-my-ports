@@ -2,7 +2,7 @@
 
 PORTNAME=	ros-console_bridge
 DISTVERSION=	0.4.0
-CATEGORIES=	sysutils
+CATEGORIES=	devel
 
 MAINTAINER=	trentonw@ifi.uio.no
 COMMENT=	ROS-independent logging that pipes into ROS packages
