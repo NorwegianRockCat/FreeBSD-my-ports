@@ -23,6 +23,8 @@ GH_TUPLE=	zotero:zotero-build:b330e8e:build \
 		zotero:zotero-word-for-windows-integration:106f9e41:winword
 
 BUILD_DEPENDS+=	bash:shells/bash \
+		zip:archivers/zip \
+		rysnc:net/rysnc \
 		npm:www/npm \
 
 LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l \
