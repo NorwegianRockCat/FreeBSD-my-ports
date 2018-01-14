@@ -1,5 +1,5 @@
---- zotero-standalone-build-5.0.26/linux/set_launcher_icon.orig	2017-11-16 10:50:21 UTC
-+++ zotero-standalone-build-5.0.26/linux/set_launcher_icon
+--- zotero-standalone-build-5.0.33/linux/set_launcher_icon.orig	2017-12-19 20:54:27 UTC
++++ zotero-standalone-build-5.0.33/linux/set_launcher_icon
 @@ -1,4 +1,4 @@
 -#!/bin/bash -e
 +#!/usr/local/bin/bash -e
