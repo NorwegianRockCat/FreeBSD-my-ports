@@ -17,4 +17,7 @@ GH_ACCOUNT=	ros-infrastructure
 GH_PROJECT=	rosdistro
 GH_TAGNAME=	0.6.4
 
+do-install:
+	(cd ${WRKSRC} && python setup.py install --root ${STAGEDIR})
+
 .include <bsd.port.mk>
