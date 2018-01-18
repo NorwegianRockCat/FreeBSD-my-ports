@@ -21,4 +21,7 @@ GH_ACCOUNT=	ros-infrastructure
 GH_PROJECT=	rospkg
 GH_TAGNAME=	1.1.4
 
+do-install:
+	(cd ${WRKSRC} && python setup.py install --root ${STAGEDIR})
+
 .include <bsd.port.mk>
