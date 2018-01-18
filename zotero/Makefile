@@ -24,7 +24,7 @@ GH_TUPLE=	zotero:zotero-build:a4303bb:build \
 
 BUILD_DEPENDS+=	bash:shells/bash \
 		zip:archivers/zip \
-		rysnc:net/rysnc \
+		rsync:net/rsync \
 		npm:www/npm \
 
 LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l \
