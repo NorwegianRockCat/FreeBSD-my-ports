@@ -11,6 +11,10 @@ LICENSE=	BSD3CLAUSE
 
 WWW=	http://wiki.ros.org/rospkg
 USES=	python
+py27_LIB_DEPENDS=	devel/py-argparse
+py27_LIB_DEPENDS=	devel/py-yaml
+py36_LIB_DEPENDS=	devel/py-argparse
+py36_LIB_DEPENDS=	devel/py-yaml
 USE_PYHTON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	ros-infrastructure
