@@ -1,5 +1,5 @@
---- zotero-standalone-build-5.0.33/fetch_xulrunner.sh.orig	2017-12-19 20:54:27 UTC
-+++ zotero-standalone-build-5.0.33/fetch_xulrunner.sh
+--- zotero-standalone-build-78fcfe1/fetch_xulrunner.sh.orig	2017-12-19 20:54:27 UTC
++++ zotero-standalone-build-78fcfe1/fetch_xulrunner.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash

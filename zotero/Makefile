@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zotero
-PORTVERSION=	5.0.33
+PORTVERSION=	5.0.47
 CATEGORIES=	deskutils
 
 MAINTAINER=	trentonw@ifi.uio.no
@@ -12,15 +12,15 @@ LICENSE=	AGPLv3
 
 WWW=	https://www.zotero.org
 USE_GITHUB=	YES
-GH_TUPLE=	zotero:zotero-build:a4303bb:build \
-		zotero:zotero-standalone-build:5.0.33:standalonebuild \
-		zotero:translators:8a9cf2d:translators/translators \
-		zotero:bundled-styles:665b7f5:styles/styles \
-		citation-style-language:locales:ed11f07:csl/chrome/content/zotero/locale/csl \
+GH_TUPLE=	zotero:zotero-build:4195bfa:build \
+		zotero:zotero-standalone-build:78fcfe1:standalonebuild \
+		zotero:translators:94ea459:translators/translators \
+		zotero:bundled-styles:4f3b62e:styles/styles \
+		citation-style-language:locales:2fddb0b:csl/chrome/content/zotero/locale/csl \
 		egh:zotero-transfw:b820c6d:transfw \
-		zotero:zotero-libreoffice-integration:c1f6d8d:libreoffice \
-		zotero:zotero-word-for-mac-integration:b9e1527:macword \
-		zotero:zotero-word-for-windows-integration:106f9e41:winword
+		zotero:zotero-libreoffice-integration:cdcf2b3:libreoffice \
+		zotero:zotero-word-for-mac-integration:6285cc0:macword \
+		zotero:zotero-word-for-windows-integration:2b51e8f:winword
 
 BUILD_DEPENDS+=	bash:shells/bash \
 		zip:archivers/zip \
