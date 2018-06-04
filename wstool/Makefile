@@ -11,9 +11,9 @@ LICENSE=	BSD3CLAUSE
 
 WWW=	https://github.com/vcstools/wstool
 USES=	python
-#py27_LIB_DEPENDS=	devel/py-argparse
+py27_LIB_DEPENDS=	devel/vcstools
 #py27_LIB_DEPENDS=	devel/py-yaml
-#py36_LIB_DEPENDS=	devel/py-argparse
+py36_LIB_DEPENDS=	devel/vcstools
 #py36_LIB_DEPENDS=	devel/py-yaml
 USE_PYHTON=	distutils autoplist
 USE_GITHUB=	yes
