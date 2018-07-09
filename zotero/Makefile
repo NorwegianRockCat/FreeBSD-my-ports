@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zotero
-PORTVERSION=	5.0.47
+PORTVERSION=	5.0.52
 CATEGORIES=	deskutils
 
 MAINTAINER=	trentonw@ifi.uio.no
@@ -13,12 +13,12 @@ LICENSE=	AGPLv3
 WWW=	https://www.zotero.org
 USE_GITHUB=	YES
 GH_TUPLE=	zotero:zotero-build:4195bfa:build \
-		zotero:zotero-standalone-build:78fcfe1:standalonebuild \
-		zotero:translators:94ea459:translators/translators \
-		zotero:bundled-styles:4f3b62e:styles/styles \
-		citation-style-language:locales:2fddb0b:csl/chrome/content/zotero/locale/csl \
-		egh:zotero-transfw:b820c6d:transfw \
-		zotero:zotero-libreoffice-integration:cdcf2b3:libreoffice \
+		zotero:zotero-standalone-build:cb12995:standalonebuild \
+		zotero:translators:83e84b9:translators/translators \
+		zotero:bundled-styles:4f4acc4:styles/styles \
+		citation-style-language:locales:b8c370c:csl/chrome/content/zotero/locale/csl \
+		egh:zotero-transfw:2ebe08f:transfw \
+		zotero:zotero-libreoffice-integration:c2ac304:libreoffice \
 		zotero:zotero-word-for-mac-integration:6285cc0:macword \
 		zotero:zotero-word-for-windows-integration:2b51e8f:winword
 

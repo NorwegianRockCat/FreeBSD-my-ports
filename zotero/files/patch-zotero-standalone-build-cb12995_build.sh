@@ -1,5 +1,5 @@
---- zotero-standalone-build-78fcfe1/build.sh.orig	2018-04-20 20:27:58 UTC
-+++ zotero-standalone-build-78fcfe1/build.sh
+--- zotero-standalone-build-cb12995/build.sh.orig	2018-04-20 20:27:58 UTC
++++ zotero-standalone-build-cb12995/build.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash -e
 +#!/usr/local/bin/bash -e
