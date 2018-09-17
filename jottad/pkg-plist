@@ -1,0 +1,3 @@
+bin/jotta-cli
+sbin/jottad
+etc/jottad/config.ini

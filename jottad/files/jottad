@@ -1,0 +1,15 @@
+#!/bin/sh
+# PROVIDE: jottad
+# REQUIRE: DAEMON
+# KEYWORD:
+
+. /etc/rc.subr
+
+name=jottad
+jottad_user=jottad
+rcvar=jottad_enable
+command_args="datadir /usr/local/etc/jottad &"
+command="/usr/local/sbin/${name}"
+
+load_rc_config $name
+run_rc_command "$1"
