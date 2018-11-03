@@ -4,19 +4,18 @@
 PORTNAME=	ibm-plex
 DISTVERSION=	1.2.1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/IBM/plex/releases/download/v${DISTVERSION}/${DISTFILES}
-DISTFILES=	OpenType.zip
+MASTER_SITES=	https://github.com/IBM/plex/releases/download/v${DISTVERSION}/
+DISTNAME=	OpenType
 
 MAINTAINER=	trueos@norwegianrockcat.com
-COMMENT=	The package of IBM’s typeface, IBM Plex
+COMMENT=	IBM Plex Typeface
 
 LICENSE=	OFL11
 
 USES=		fonts
+USES+=		zip
 USE_XORG=	x11
-#USE_GITHUB=	no
-#GH_ACCOUNT=	IBM
-#GH_PROJECT=	plex
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
