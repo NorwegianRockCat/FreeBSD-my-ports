@@ -30,7 +30,6 @@ share/applications/zotero.desktop
 %%DATADIR%%/extensions/zoteroOpenOfficeIntegration@zotero.org/install/Zotero_OpenOffice_Integration.oxt
 %%DATADIR%%/extensions/zoteroOpenOfficeIntegration@zotero.org/resource/installer.jsm
 %%DATADIR%%/extensions/zoteroOpenOfficeIntegration@zotero.org/scripts/symlink_sdk
-%%DATADIR%%/gmp-clearkey/0.1/clearkey.info
 %%DATADIR%%/gmp-clearkey/0.1/libclearkey.so
 %%DATADIR%%/liblgpllibs.so
 %%DATADIR%%/libmozavcodec.so

@@ -75,7 +75,7 @@ do-build:
 	cd ${WRKSRC} && \
 		npm run build
 	cd ${WRKSRC_standalonebuild} && \
-		./fetch_xulrunner.sh -p f
+		env WRKDIR=${WRKDIR} ./fetch_xulrunner.sh -p f
 	cd ${WRKSRC_standalonebuild} && \
 		./scripts/dir_build
 
@@ -104,7 +104,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/${data} ${STAGEDIR}${PREFIX}/share/zotero
 .endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/zotero/gmp-clearkey/0.1
-	${INSTALL_DATA} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/gmp-clearkey/0.1/clearkey.info ${STAGEDIR}${PREFIX}/share/zotero/gmp-clearkey/0.1
 	${INSTALL_LIB} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/gmp-clearkey/0.1/libclearkey.so ${STAGEDIR}${PREFIX}/share/zotero/gmp-clearkey/0.1
 	${INSTALL_DATA} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/zotero.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${RLN} ${STAGEDIR}${PREFIX}/share/zotero/zotero ${STAGEDIR}${PREFIX}/bin/zotero
