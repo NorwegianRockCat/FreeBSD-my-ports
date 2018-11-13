@@ -1,4 +1,4 @@
---- zotero-standalone-build-cb12995/fetch_xulrunner.sh.orig	2017-12-19 20:54:27 UTC
+--- zotero-standalone-build-cb12995/fetch_xulrunner.sh.orig	2018-06-11 16:44:30 UTC
 +++ zotero-standalone-build-cb12995/fetch_xulrunner.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
@@ -40,7 +40,7 @@
  	usage
  fi
  
-@@ -159,6 +161,27 @@ if [ $BUILD_WIN32 == 1 ]; then
+@@ -159,6 +161,25 @@ if [ $BUILD_WIN32 == 1 ]; then
  	cd ..
  	
  	rm "Firefox%20Setup%20$GECKO_VERSION.exe"
@@ -48,15 +48,13 @@
 +
 +
 +if [ $BUILD_FREEBSD == 1 ]; then
-+	GECKO_VERSION="esr-52.6.0_3,1"
-+	DOWNLOAD_URL="https://ftp.mozilla.org/pub/firefox/releases/$GECKO_VERSION"
++	GECKO_VERSION="esr-60.3.0_2,1"
 +	rm -rf firefox
 +	rm -rf freebsd-pkg-foo
-+	
-+	#curl -O "$DOWNLOAD_URL/linux-i686/en-US/firefox-$GECKO_VERSION.tar.bz2"
-+	sudo pkg fetch -y firefox-$GECKO_VERSION
++
++   pkg fetch -U -o $WRKDIR -y firefox-$GECKO_VERSION
 +	mkdir freebsd-pkg-foo
-+	tar -xf /usr/local/tmp/firefox-$GECKO_VERSION.txz --strip-components 3 -C freebsd-pkg-foo
++	tar -xf $WRKDIR/All/firefox-$GECKO_VERSION.txz --strip-components 3 -C freebsd-pkg-foo
 +	mv freebsd-pkg-foo/lib/firefox firefox
 +	arch=amd64
 +	rm -rf firefox-$arch
@@ -68,7 +66,7 @@
  fi
  
  if [ $BUILD_LINUX == 1 ]; then
-@@ -187,4 +210,4 @@ if [ $BUILD_LINUX == 1 ]; then
+@@ -187,4 +208,4 @@ if [ $BUILD_LINUX == 1 ]; then
  	rm "firefox-$GECKO_VERSION.tar.bz2"
  fi
  
