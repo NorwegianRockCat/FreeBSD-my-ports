@@ -3,25 +3,19 @@
 PORTNAME=	ros-rospkg
 DISTVERSION=	1.1.4
 CATEGORIES=	devel
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	trentonw@ifi.uio.no
 COMMENT=	rospkg Python library for ROS
 
 LICENSE=	BSD3CLAUSE
 
-WWW=	http://wiki.ros.org/rospkg
 USES=	python
-py27_LIB_DEPENDS=	devel/py-argparse
-py27_LIB_DEPENDS=	devel/py-yaml
-py36_LIB_DEPENDS=	devel/py-argparse
-py36_LIB_DEPENDS=	devel/py-yaml
-USE_PYHTON=	distutils autoplist
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=1:devel/py-argparse \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3:devel/py-yaml
+USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	ros-infrastructure
 GH_PROJECT=	rospkg
-GH_TAGNAME=	1.1.4
-
-do-install:
-	(cd ${WRKSRC} && python setup.py install --root ${STAGEDIR})
 
 .include <bsd.port.mk>

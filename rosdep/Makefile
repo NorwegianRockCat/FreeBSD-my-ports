@@ -3,13 +3,15 @@
 PORTNAME=	ros-rosdep
 DISTVERSION=	0.11.8
 CATEGORIES=	devel
-PKGNAMEPREFIX=	${PY_FLAVOR}-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	Multi-package manager system dependency tool for ROS
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ros-catkin_pkg>0.4.0:devel/ros-catkin_pkg@${PY_FLAVOR}
 USES= 	python
 
 USE_PYTHON=	autoplist distutils
