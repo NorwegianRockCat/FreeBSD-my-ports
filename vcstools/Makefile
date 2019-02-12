@@ -3,25 +3,22 @@
 PORTNAME=	vcstools
 DISTVERSION=	0.1.40
 CATEGORIES=	devel
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	trentonw@ifi.uio.no
+MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT= 	Python library for interacting with various VCS systems
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-WWW=	http://wiki.ros.org/vcstools
 USES=	python
-#py27_LIB_DEPENDS=	devel/vcstools
-#py27_LIB_DEPENDS=	devel/py-yaml
-#py36_LIB_DEPENDS=	devel/vcstools
-#py36_LIB_DEPENDS=	devel/py-yaml
-USE_PYHTON=	distutils autoplist
+
+RUN_DEPENDS= 	${PYTHON_PKGNAMEPREFIX}dateutil>=2:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3:devel/py-yaml@${PY_FLAVOR} 
+
+USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	vcstools
 GH_PROJECT=	vcstools
-GH_TAGNAME=	0.1.40
-
-do-install:
-	(cd ${WRKSRC} && python setup.py install --root ${STAGEDIR})
 
 .include <bsd.port.mk>
