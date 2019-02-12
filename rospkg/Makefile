@@ -10,9 +10,10 @@ COMMENT=	rospkg Python library for ROS
 
 LICENSE=	BSD3CLAUSE
 
-USES=	python
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=1:devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3:devel/py-yaml
+
+USES=	python
 USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	ros-infrastructure
