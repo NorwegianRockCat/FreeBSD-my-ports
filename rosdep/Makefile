@@ -12,8 +12,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ros-catkin_pkg>=0.4.0:devel/ros-catkin_pkg@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ros-rosinstall>=0.7.7:devel/rosinstall@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3:devel/py-yaml
+		${PYTHON_PKGNAMEPREFIX}ros-rospkg>=1:devel/ros-rospkg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ros-rosdistro>=0:devel/ros-rosdistro@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3:devel/py-yaml@${PY_FLAVOR} 
+
 USES= 	python
 
 USE_PYTHON=	autoplist distutils
