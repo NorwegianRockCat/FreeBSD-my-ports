@@ -3,21 +3,22 @@
 PORTNAME=	ros-rosdistro
 DISTVERSION=	0.6.4
 CATEGORIES=	devel
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	trentonw@ifi.uio.no
+MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	Tools to work with catkinized rosdistro files
 
 LICENSE=	BSD3CLAUSE
 
-WWW=	http://github.com/ros-infrastructure/rosdistro
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ros-catkin_pkg>=0.4.0:devel/ros-catkin_pkg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}argparse>=1:devel/py-argparse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ros-rospkg>=1:devel/ros-rospkg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3:devel/py-yaml@${PY_FLAVOR}
+
 USES=	python
-USE_PYHTON=	distutils autoplist
+USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	ros-infrastructure
 GH_PROJECT=	rosdistro
-GH_TAGNAME=	0.6.4
-
-do-install:
-	(cd ${WRKSRC} && python setup.py install --root ${STAGEDIR})
 
 .include <bsd.port.mk>
