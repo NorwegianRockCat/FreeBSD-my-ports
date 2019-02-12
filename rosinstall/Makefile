@@ -1,19 +1,23 @@
 # $FreeBSD$
 
-PORTNAME=	rosinstall
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PORTNAME=	ros-rosinstall
 DISTVERSION=	0.7.7
 CATEGORIES=	devel
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	trueos@norwegianrockcat.com
-COMMENT=	Command-line tools for maintaining a workspace of projects from multiple version-control systems, tailored for ROS.
+COMMENT=	ROS command-line tools for maintaining a workspace from VCS
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ros-vcstools>=0:devel/ros-vcstools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ros-rosdistro>=0:devel/ros-rosdistro@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ros-catkin_pkg>=0:devel/ros-catkin_pkg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ros-wstool>=0:devel/ros-wstool@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3:devel/py-yaml@${PY_FLAVOR}
+
 USES=	python
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=1:devel/py-argparse \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3:devel/py-yaml
 USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	vcstools
