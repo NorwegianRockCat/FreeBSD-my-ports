@@ -1,27 +1,24 @@
 # $FreeBSD$
 
-PORTNAME=	wstool
+PORTNAME=	ros-wstool
 DISTVERSION=	0.1.17
 CATEGORIES=	devel
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	trentonw@ifi.uio.no
+MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	A tool for managing a workspace of multiple heterogenous SCM repositories
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-WWW=	https://github.com/vcstools/wstool
 USES=	python
-py27_LIB_DEPENDS=	devel/vcstools
-#py27_LIB_DEPENDS=	devel/py-yaml
-py36_LIB_DEPENDS=	devel/vcstools
-#py36_LIB_DEPENDS=	devel/py-yaml
-USE_PYHTON=	distutils autoplist
+
+RUN_DEPENDS= 	${PYTHON_PKGNAMEPREFIX}ros-vcstools>=0:devel/ros-vcstools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3:devel/py-yaml@${PY_FLAVOR} 
+
+USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	vcstools
 GH_PROJECT=	wstool
-GH_TAGNAME=	0.1.17
-
-do-install:
-	(cd ${WRKSRC} && python setup.py install --root ${STAGEDIR})
 
 .include <bsd.port.mk>
