@@ -5,13 +5,13 @@ DISTVERSION=	1.1.4
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	trentonw@ifi.uio.no
-COMMENT=	rospkg Python library for ROS
+MAINTAINER=	trueos@norwegianrockcat.com
+COMMENT=	Python library for ROS packaging system
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=1:devel/py-argparse \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3:devel/py-yaml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=1:devel/py-argparse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3:devel/py-yaml@${PY_FLAVOR}
 
 USES=	python
 USE_PYTHON=	distutils autoplist
