@@ -1,7 +1,6 @@
-# Created by: Horia Racoviceanu <horia@racoviceanu.com>
 # $FreeBSD$
 
-PORTNAME=	firaGO
+PORTNAME=	firago
 PORTVERSION=	1.001
 CATEGORIES=	x11-fonts
 
@@ -11,6 +10,7 @@ COMMENT=	Expanded version of Fira Sans with support for additional languages
 LICENSE=	OFL11
 
 USES=		fonts
+
 USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	bBoxType
