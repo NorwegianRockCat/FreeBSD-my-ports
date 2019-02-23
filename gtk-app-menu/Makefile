@@ -10,6 +10,7 @@ COMMENT=	GTK module for putting application menubar in a global menubar
 LICENSE=	LGPL3
 
 USES=	cmake:outsource
+
 CMAKE_SOURCE_PATH=	${WRKSRC}/subprojects/appmenu-gtk-module
 
 USE_GNOME=	gtk30 glib20 gtk20
