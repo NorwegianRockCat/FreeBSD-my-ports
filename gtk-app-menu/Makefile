@@ -8,6 +8,7 @@ MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	GTK module for putting application menubar in a global menubar
 
 LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/subprojects/appmenu-gtk-module/LICENSE
 
 USES=	cmake:outsource
 
