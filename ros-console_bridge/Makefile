@@ -9,7 +9,7 @@ COMMENT=	ROS-independent logging that pipes into ROS packages
 
 LICENSE=	BSD3CLAUSE
 
-USES=	cmake:outsource
+USES=	cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ros
