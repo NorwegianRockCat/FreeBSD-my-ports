@@ -4,16 +4,18 @@ PORTNAME=	ros-urdfdom
 DISTVERSION=	1.0.0
 CATEGORIES=	devel
 
-MAINTAINER=	trentonw@ifi.uio.no
+MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	URDF parsers
 
 LICENSE=	BSD3CLAUSE
+
+BUILD_DEPENDS+=${LOCALBASE}/lib/urdfdom_headers/cmake/urdfdom_headers-config.cmake:devel/ros-urdfdom_headers
 
 LIB_DEPENDS+=libtinyxml.so:textproc/tinyxml \
 	libconsole_bridge.so:sysutils/ros-console_bridge
 
 WWW=	http://ros.org/wiki/urdf
-USES=	cmake:outsource
+USES=	cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	ros
 GH_PROJECT=	urdfdom
