@@ -24,7 +24,7 @@ GH_TUPLE=	zotero:zotero-build:4195bfa:build \
 
 BUILD_DEPENDS+=	bash:shells/bash \
 		zip:archivers/zip \
-		python3:lang/python3 \
+		python:3 \
 		rsync:net/rsync \
 		npm:www/npm \
 
@@ -45,14 +45,14 @@ LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpng16.so:graphics/png \
-		libhunspell-1.6.so:textproc/hunspell \
+		libhunspell-1.7.so:textproc/hunspell \
 		libevent-2.1.so.6:devel/libevent \
 		libvpx.so:multimedia/libvpx \
 		libssl3.so:security/nss \
 		libsmime3.so:security/nss \
 		libnss3.so:security/nss
 
-USES+=jpeg sqlite desktop-file-utils
+USES+=jpeg sqlite desktop-file-utils shebangfix
 USE_XORG+=xt x11 xcb pixman xext xrender xdamage xfixes xcomposite
 USE_GNOME+=glib20 gtk20 atk pango gdkpixbuf2 cairo
 PATCH_WRKSRC	= ${WRKDIR}
