@@ -5,28 +5,17 @@ PORTNAME=	zotero
 PORTVERSION=	5.0.52
 CATEGORIES=	deskutils
 
-MAINTAINER=	trentonw@ifi.uio.no
+MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	Tool to collect, organize, cite, and share your research sources
 
 LICENSE=	AGPLv3
 
 WWW=	https://www.zotero.org
-USE_GITHUB=	YES
-GH_TUPLE=	zotero:zotero-build:4195bfa:build \
-		zotero:zotero-standalone-build:cb12995:standalonebuild \
-		zotero:translators:83e84b9:translators/translators \
-		zotero:bundled-styles:4f4acc4:styles/styles \
-		citation-style-language:locales:b8c370c:csl/chrome/content/zotero/locale/csl \
-		egh:zotero-transfw:2ebe08f:transfw \
-		zotero:zotero-libreoffice-integration:c2ac304:libreoffice \
-		zotero:zotero-word-for-mac-integration:6285cc0:macword \
-		zotero:zotero-word-for-windows-integration:2b51e8f:winword
 
 BUILD_DEPENDS+=	bash:shells/bash \
 		zip:archivers/zip \
-		python:3 \
 		rsync:net/rsync \
-		npm:www/npm \
+		npm:www/npm
 
 LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l \
 		libgraphite2.so:graphics/graphite2 \
@@ -46,16 +35,27 @@ LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpng16.so:graphics/png \
 		libhunspell-1.7.so:textproc/hunspell \
-		libevent-2.1.so.6:devel/libevent \
+		libevent-2.1.so:devel/libevent \
 		libvpx.so:multimedia/libvpx \
 		libssl3.so:security/nss \
 		libsmime3.so:security/nss \
 		libnss3.so:security/nss
 
-USES+=jpeg sqlite desktop-file-utils shebangfix
+USES+=jpeg sqlite desktop-file-utils shebangfix python:3+
 USE_XORG+=xt x11 xcb pixman xext xrender xdamage xfixes xcomposite
 USE_GNOME+=glib20 gtk20 atk pango gdkpixbuf2 cairo
-PATCH_WRKSRC	= ${WRKDIR}
+USE_GITHUB=	YES
+GH_TUPLE=	zotero:zotero-build:4195bfa:build \
+		zotero:zotero-standalone-build:cb12995:standalonebuild \
+		zotero:translators:83e84b9:translators/translators \
+		zotero:bundled-styles:4f4acc4:styles/styles \
+		citation-style-language:locales:b8c370c:csl/chrome/content/zotero/locale/csl \
+		egh:zotero-transfw:2ebe08f:transfw \
+		zotero:zotero-libreoffice-integration:c2ac304:libreoffice \
+		zotero:zotero-word-for-mac-integration:6285cc0:macword \
+		zotero:zotero-word-for-windows-integration:2b51e8f:winword
+
+PATCH_WRKSRC=	${WRKDIR}
 
 INSTALL_TARGET=	install-strip
 
@@ -75,7 +75,7 @@ do-build:
 	cd ${WRKSRC} && \
 		npm run build
 	cd ${WRKSRC_standalonebuild} && \
-		env WRKDIR=${WRKDIR} ./fetch_xulrunner.sh -p f
+		${SETENV} WRKDIR=${WRKDIR} ./fetch_xulrunner.sh -p f
 	cd ${WRKSRC_standalonebuild} && \
 		./scripts/dir_build
 
