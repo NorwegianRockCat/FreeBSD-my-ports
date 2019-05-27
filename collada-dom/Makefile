@@ -14,7 +14,7 @@ LIB_DEPENDS+=	libminizip.so:archivers/minizip \
 		libboost_filesystem.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
 
-USES=	cmake
+USES=	cmake gnome
 USE_LDCONFIG=	yes
 
 USE_GNOME+=	libxml2
