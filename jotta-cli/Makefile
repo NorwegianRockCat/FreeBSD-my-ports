@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jotta-cli
-PORTVERSION=	0.4.4986
+PORTVERSION=	0.5.15025
 CATEGORIES=	net
 
 MASTER_SITES=	https://repo.jotta.us/archives/freebsd/${ARCH}/
