@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zotero
-PORTVERSION=	5.0.52
+PORTVERSION=	5.0.69
 CATEGORIES=	deskutils
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -35,25 +35,25 @@ LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpng16.so:graphics/png \
 		libhunspell-1.7.so:textproc/hunspell \
-		libevent-2.1.so:devel/libevent \
+		libevent.so:devel/libevent \
 		libvpx.so:multimedia/libvpx \
 		libssl3.so:security/nss \
 		libsmime3.so:security/nss \
 		libnss3.so:security/nss
 
-USES+=jpeg sqlite desktop-file-utils shebangfix python:3+
+USES+=gnome jpeg sqlite desktop-file-utils shebangfix python:3+
 USE_XORG+=xt x11 xcb pixman xext xrender xdamage xfixes xcomposite
 USE_GNOME+=glib20 gtk20 atk pango gdkpixbuf2 cairo
 USE_GITHUB=	YES
-GH_TUPLE=	zotero:zotero-build:4195bfa:build \
-		zotero:zotero-standalone-build:cb12995:standalonebuild \
-		zotero:translators:83e84b9:translators/translators \
-		zotero:bundled-styles:4f4acc4:styles/styles \
-		citation-style-language:locales:b8c370c:csl/chrome/content/zotero/locale/csl \
-		egh:zotero-transfw:2ebe08f:transfw \
-		zotero:zotero-libreoffice-integration:c2ac304:libreoffice \
-		zotero:zotero-word-for-mac-integration:6285cc0:macword \
-		zotero:zotero-word-for-windows-integration:2b51e8f:winword
+GH_TUPLE=	zotero:zotero-build:ed57025:build \
+		zotero:zotero-standalone-build:3f4913f:standalonebuild \
+		zotero:translators:5c3961e:translators/translators \
+		zotero:bundled-styles:91b7ff2:styles/styles \
+		citation-style-language:locales:e89e6b0:csl/chrome/content/zotero/locale/csl \
+		egh:zotero-transfw:bd55dc1:transfw \
+		zotero:zotero-libreoffice-integration:e18dcc0:libreoffice \
+		zotero:zotero-word-for-mac-integration:59c169:macword \
+		zotero:zotero-word-for-windows-integration:b4715ce:winword
 
 PATCH_WRKSRC=	${WRKDIR}
 
