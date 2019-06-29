@@ -1,10 +1,10 @@
---- zotero-standalone-build-3f4913f/fetch_xulrunner.sh.orig	2018-06-11 16:44:30 UTC
+--- zotero-standalone-build-3f4913f/fetch_xulrunner.sh.orig	2019-06-21 10:32:41 UTC
 +++ zotero-standalone-build-3f4913f/fetch_xulrunner.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
  set -euo pipefail
-
+ 
  # Copyright (c) 2011  Zotero
 @@ -26,7 +26,7 @@ function usage {
  	cat >&2 <<DONE
@@ -33,16 +33,16 @@
  						usage
 @@ -55,7 +57,7 @@ while getopts "p:" opt; do
  done
-
+ 
  # Require at least one platform
 -if [[ $BUILD_MAC == 0 ]] && [[ $BUILD_WIN32 == 0 ]] && [[ $BUILD_LINUX == 0 ]]; then
 +if [[ $BUILD_MAC == 0 ]] && [[ $BUILD_WIN32 == 0 ]] && [[ $BUILD_LINUX == 0 ]] && [[ $BUILD_FREEBSD == 0 ]]; then
  	usage
  fi
-
-@@ -159,6 +161,25 @@ if [ $BUILD_WIN32 == 1 ]; then
+ 
+@@ -164,6 +166,25 @@ if [ $BUILD_WIN32 == 1 ]; then
  	cd ..
-
+ 	
  	rm "Firefox%20Setup%20$GECKO_VERSION.exe"
 +fi
 +
@@ -64,12 +64,12 @@
 +	extract_devtools
 +	cd ..
  fi
-
+ 
  if [ $BUILD_LINUX == 1 ]; then
-@@ -187,4 +208,4 @@ if [ $BUILD_LINUX == 1 ]; then
+@@ -192,4 +213,4 @@ if [ $BUILD_LINUX == 1 ]; then
  	rm "firefox-$GECKO_VERSION.tar.bz2"
  fi
-
+ 
 -echo Done
 \ No newline at end of file
 +echo Done

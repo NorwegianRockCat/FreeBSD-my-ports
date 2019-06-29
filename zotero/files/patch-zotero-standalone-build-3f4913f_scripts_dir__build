@@ -1,10 +1,10 @@
---- zotero-standalone-build-3f4913f/scripts/dir_build.orig	2017-12-19 20:54:27 UTC
+--- zotero-standalone-build-3f4913f/scripts/dir_build.orig	2019-06-21 10:32:41 UTC
 +++ zotero-standalone-build-3f4913f/scripts/dir_build
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash -e
  set -euo pipefail
-
+ 
  SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 @@ -28,6 +28,7 @@ while getopts "p:t" opt; do
  				case ${OPTARG:i:1} in
@@ -25,7 +25,7 @@
  	elif [ "`uname -o 2> /dev/null`" = "Cygwin" ]; then
 @@ -68,5 +71,6 @@ else
  	hash=`git -C "$ZOTERO_SOURCE_DIR" rev-parse --short HEAD`
-
+ 	
  	"$ZOTERO_BUILD_DIR/xpi/build_xpi" -s "$ZOTERO_SOURCE_DIR/build" -c $CHANNEL -m $hash
 +	echo "going to run:" "$ROOT_DIR/build.sh" -d "$ZOTERO_BUILD_DIR/xpi/build/staging" -p $PLATFORM -c $CHANNEL -s $PARAMS
  	"$ROOT_DIR/build.sh" -d "$ZOTERO_BUILD_DIR/xpi/build/staging" -p $PLATFORM -c $CHANNEL -s $PARAMS
