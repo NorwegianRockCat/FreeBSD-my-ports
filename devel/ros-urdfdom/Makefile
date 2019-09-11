@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS+=${LOCALBASE}/lib/urdfdom_headers/cmake/urdfdom_headers-config.cmake:devel/ros-urdfdom_headers
 
 LIB_DEPENDS+=libtinyxml.so:textproc/tinyxml \
-	libconsole_bridge.so:sysutils/ros-console_bridge
+	libconsole_bridge.so:devel/ros-console_bridge
 
 WWW=	http://ros.org/wiki/urdf
 USES=	cmake
