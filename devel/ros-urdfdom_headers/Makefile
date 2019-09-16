@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ros-urdfdom_headers
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.3
 CATEGORIES=	devel
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -14,6 +14,5 @@ USES=	cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	ros
 GH_PROJECT=	urdfdom_headers
-GH_TAGNAME=	1.0.0
 
 .include <bsd.port.mk>
