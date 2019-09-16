@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ros-console_bridge
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.3
 CATEGORIES=	devel
 
 MAINTAINER=	trentonw@ifi.uio.no
