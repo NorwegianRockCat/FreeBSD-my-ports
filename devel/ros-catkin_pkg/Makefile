@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ros-catkin_pkg
-DISTVERSION=	0.4.12
+DISTVERSION=	0.4.13
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=1:devel/py-argparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0:textproc/py-docutils@${PY_FLAVOR}
 
 USES=	python
+
 USE_PYTHON=	distutils autoplist
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ros-infrastructure
 GH_PROJECT=	catkin_pkg
