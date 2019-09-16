@@ -1,8 +1,9 @@
 # Created by: Horia Racoviceanu <horia@racoviceanu.com>
-# $FreeBSD$
+# $FreeBSD: head/x11-fonts/fira/Makefile 495395 2019-03-11 21:25:57Z zeising $
 
 PORTNAME=	fira
 PORTVERSION=	4.301
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	trueos@norwegianrockcat.com

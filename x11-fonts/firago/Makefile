@@ -1,6 +1,7 @@
-# $FreeBSD$
+# $FreeBSD: head/x11-fonts/firago/Makefile 495395 2019-03-11 21:25:57Z zeising $
 
 PORTNAME=	firago
+PORTREVISION=	1
 PORTVERSION=	1.001
 CATEGORIES=	x11-fonts
 
