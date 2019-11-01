@@ -9,3 +9,4 @@ lib/gtk-3.0/modules/libappmenu-gtk-module.so
 include/appmenu-gtk-parser/appmenu-gtk-menu-shell.h
 include/appmenu-gtk-parser/appmenu-gtk-parser.h
 include/appmenu-gtk-parser/appmenu-gtk-action-group.h
+share/glib-2.0/schemas/org.appmenu.gtk-module.gschema.xml
