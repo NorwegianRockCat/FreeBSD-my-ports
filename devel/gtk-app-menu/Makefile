@@ -15,6 +15,7 @@ USES=	cmake gnome
 CMAKE_SOURCE_PATH=	${WRKSRC}/subprojects/appmenu-gtk-module
 
 USE_GNOME=	gtk30 glib20 gtk20
+GLIB_SCHEMAS=	org.appmenu.gtk-module.gschema.xml
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	vala-panel-project
