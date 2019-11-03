@@ -41,7 +41,7 @@ LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l \
 		libsmime3.so:security/nss \
 		libnss3.so:security/nss
 
-USES+=gnome jpeg sqlite desktop-file-utils shebangfix python:3+
+USES+=gnome jpeg sqlite desktop-file-utils shebangfix python xorg
 USE_XORG+=xt x11 xcb pixman xext xrender xdamage xfixes xcomposite
 USE_GNOME+=glib20 gtk20 atk pango gdkpixbuf2 cairo
 USE_GITHUB=	YES
