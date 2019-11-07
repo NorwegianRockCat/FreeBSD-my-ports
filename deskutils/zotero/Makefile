@@ -94,7 +94,7 @@ do-install:
 .for bin in zotero-bin plugin-container
 	${INSTALL_PROGRAM} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/${bin} ${STAGEDIR}${PREFIX}/share/zotero
 .endfor
-.for lib in liblgpllibs.so libmozavcodec.so libmozavutil.so libxul.so
+.for lib in liblgpllibs.so libmozavcodec.so libmozavutil.so libmozgtk.so libxul.so
 	${INSTALL_LIB} ${WRKSRC_standalonebuild}/staging/Zotero_freebsd-${ARCH}/${lib} ${STAGEDIR}${PREFIX}/share/zotero
 .endfor
 .for script in zotero
