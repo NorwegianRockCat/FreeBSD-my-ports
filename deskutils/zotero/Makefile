@@ -15,7 +15,7 @@ WWW=	https://www.zotero.org
 BUILD_DEPENDS+=	bash:shells/bash \
 		zip:archivers/zip \
 		rsync:net/rsync \
-		npm:www/npm
+		npm:www/npm8
 
 LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l \
 		libgraphite2.so:graphics/graphite2 \
