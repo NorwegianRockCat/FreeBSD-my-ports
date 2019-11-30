@@ -1,0 +1,9 @@
+lib/cmake/KQtQuickCharts/KQtQuickChartsVersion.cmake
+lib/qt5/qml/org/kde/charts/BarChart.qml
+lib/qt5/qml/org/kde/charts/libkqtquickcharts.so
+lib/qt5/qml/org/kde/charts/LineChart.qml
+lib/qt5/qml/org/kde/charts/qmldir
+lib/qt5/qml/org/kde/charts/XYChart.qml
+lib/qt5/qml/org/kde/charts/Label.qml
+lib/qt5/qml/org/kde/charts/LineLabel.qml
+lib/qt5/qml/org/kde/charts/LegendItem.qml
