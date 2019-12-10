@@ -1,8 +1,0 @@
---- zotero-standalone-build-3f4913f/modules/zotero-libreoffice-integration/scripts/symlink_sdk.orig	2019-06-26 03:45:17 UTC
-+++ zotero-standalone-build-3f4913f/modules/zotero-libreoffice-integration/scripts/symlink_sdk
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/local/bin/bash
- 
- CWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
- SYMLINK_LOCATION="$CWD/../build/lib/libreoffice-sdk"

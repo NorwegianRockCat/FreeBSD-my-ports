@@ -1,9 +1,9 @@
---- zotero-standalone-build-3f4913f/build.sh.orig	2019-06-21 10:32:41 UTC
-+++ zotero-standalone-build-3f4913f/build.sh
+--- zotero-standalone-build-90a781b/build.sh.orig	2019-06-21 10:32:41 UTC
++++ zotero-standalone-build-90a781b/build.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash -e
 +#!/usr/local/bin/bash -e
- 
+
  # Copyright (c) 2011  Zotero
  #                     Center for History and New Media
 @@ -62,6 +62,7 @@ ZIP_FILE=""
@@ -24,13 +24,13 @@
  						echo "$0: Invalid platform option ${OPTARG:i:1}"
 @@ -113,7 +115,7 @@ elif [[ -n "$SOURCE_DIR" ]] && [[ -n "$ZIP_FILE" ]]; t
  fi
- 
+
  # Require at least one platform
 -if [[ $BUILD_MAC == 0 ]] && [[ $BUILD_WIN32 == 0 ]] && [[ $BUILD_LINUX == 0 ]]; then
 +if [[ $BUILD_MAC == 0 ]] && [[ $BUILD_WIN32 == 0 ]] && [[ $BUILD_LINUX == 0 ]] && [[ $BUILD_FREEBSD == 0 ]]; then
  	usage
  fi
- 
+
 @@ -544,6 +546,71 @@ if [ $BUILD_LINUX == 1 ]; then
  			rm -f "$DIST_DIR/Zotero-${VERSION}_linux-$arch.tar.bz2"
  			cd "$STAGE_DIR"
