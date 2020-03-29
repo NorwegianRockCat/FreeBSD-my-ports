@@ -1,0 +1,34 @@
+#!/bin/sh -x
+#
+# PROVIDE: webcamd
+# REQUIRE: FILESYSTEMS netif dbus
+# BEFORE: devd
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=remarkable
+rcvar=remarkable_enable
+load_rc_config $name
+
+devd_device=${2}
+start_cmd="${name}_start"
+
+remarkable_start_devd()
+{
+    # Find the USB Ethernet for the device
+    usb_ethernet=`/sbin/dmesg | /usr/bin/tail -4 | awk -v device=$devd_device  -F: 'index($0, "on " device) {print $1}'`
+    /sbin/dhclient $usb_ethernet
+}
+
+remarkable_start()
+{
+    if [ "$devd_device" ]; then
+	remarkable_start_devd
+    else
+	echo "Plug in your Remarkable to connect to it" 
+    fi
+}
+
+run_rc_command "$1"
+
