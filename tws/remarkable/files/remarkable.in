@@ -25,7 +25,8 @@ remarkable_start_devd()
     while [ $? -eq 0 ] && [ $i -lt $total_ifs ];
     do
 	if [ $ueparent = $devd_device ]; then
-	    return /sbin/dhclient ue$i
+	    /sbin/dhclient ue$i
+	    return
 	fi
 	# It wasn't that one
 	i=$(($i + 1))
