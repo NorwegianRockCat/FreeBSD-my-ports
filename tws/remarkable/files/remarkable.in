@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh
 #
 # PROVIDE: webcamd
 # REQUIRE: FILESYSTEMS netif dbus
@@ -17,8 +17,21 @@ start_cmd="${name}_start"
 remarkable_start_devd()
 {
     # Find the USB Ethernet for the device
-    usb_ethernet=`/sbin/dmesg | /usr/bin/tail -4 | awk -v device=$devd_device  -F: 'index($0, "on " device) {print $1}'`
-    /sbin/dhclient $usb_ethernet
+    # We first grab the total number of interfaces in
+    # the case when all the interfaces are USB Ethernet
+    local total_ifs=`sysctl -n net.link.generic.system.ifcount`
+    local i=0
+    ueparent=`sysctl -n net.ue.$i.%parent`
+    while [ $? -eq 0 ] && [ $i -lt $total_ifs ];
+    do
+	if [ $ueparent = $devd_device ]; then
+	    return /sbin/dhclient ue$i
+	fi
+	# It wasn't that one
+	i=$(($i + 1))
+	ueparent=`sysctl -n net.ue.$i.%parent`
+    done
+    echo "Couldn't find a remarkable tablet."
 }
 
 remarkable_start()
