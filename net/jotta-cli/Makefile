@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jotta-cli
-PORTVERSION=	0.5.15025
+PORTVERSION=	0.6.24251
 CATEGORIES=	net
 
 MASTER_SITES=	https://repo.jotta.us/archives/freebsd/${ARCH}/
@@ -25,11 +25,17 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 NO_BUILD=	yes
 
+USE_RC_SUBR=	jottad
+
+SUB_FILES=	pkg-message \
+		jottad
+
 do-install:
-	${CP} ${PATCHDIR}/jottad ${STAGEDIR}${PREFIX}/etc/rc.d/jottad
-	${MV} ${WRKDIR}/usr/bin/jotta-cli ${STAGEDIR}${PREFIX}/bin
-	${MV} ${WRKDIR}/usr/bin/jottad ${STAGEDIR}${PREFIX}/sbin
-	${MV} ${WRKDIR}/usr/share/* ${STAGEDIR}${PREFIX}/share
-	${MV} ${WRKDIR}/etc/* ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_SCRIPT} ${WRKDIR}/jottad ${STAGEDIR}${PREFIX}/etc/rc.d/jottad
+	${INSTALL_PROGRAM} ${WRKDIR}/usr/bin/jotta-cli ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/usr/bin/jottad ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}/var/lib/jottad
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/jottad
+	${INSTALL_DATA} ${WRKDIR}/etc/jottad/config.ini ${STAGEDIR}${PREFIX}/etc/jottad/config.ini.sample
 
 .include <bsd.port.mk>
