@@ -4,24 +4,22 @@
 PORTNAME=	jotta-cli
 PORTVERSION=	0.6.24251
 CATEGORIES=	net
-
 MASTER_SITES=	https://repo.jotta.us/archives/freebsd/${ARCH}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_freebsd_${ARCH}
-
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	Jotta Cloud Daemon and Command-Line Interface
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	"Jottacloud Terms and Service"
-LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 LICENSE_TEXT=	"JottaCloud has its own terms and conditions available at https://www.jottacloud.com/en/terms.html"
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 RESTRICTED=	yes
 USERS=	jottad
 GROUPS=	jottad
-
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 NO_BUILD=	yes
 
