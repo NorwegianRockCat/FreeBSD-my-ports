@@ -3,7 +3,7 @@
 
 PORTNAME=	remarkable-devd
 PORTVERSION=	1.0
-CATEGORIES=	multimedia
+CATEGORIES=	net
 MASTER_SITES=	#
 DISTFILES=      #
 
