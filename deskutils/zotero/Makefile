@@ -49,6 +49,7 @@ GH_TUPLE=	zotero:zotero-build:2c9869f:build \
 		zotero:zotero-standalone-build:90a781b:standalonebuild \
 		zotero:translators:46217c2:translators/translators \
 		zotero:bundled-styles:d4c6f38:styles/styles \
+		zotero:zotero-schema:19d26805:schema \
 		citation-style-language:locales:9785a6e:csl/chrome/content/zotero/locale/csl \
 		egh:zotero-transfw:bd55dc1:transfw \
 		zotero:zotero-libreoffice-integration:e48f1f4:libreoffice \
@@ -64,6 +65,7 @@ post-extract:
 	${MV} ${WRKSRC_libreoffice}/* ${WRKSRC_standalonebuild}/modules/zotero-libreoffice-integration
 	${MV} ${WRKSRC_winword}/* ${WRKSRC_standalonebuild}/modules/zotero-word-for-windows-integration
 	${MV} ${WRKSRC_macword}/* ${WRKSRC_standalonebuild}/modules/zotero-word-for-mac-integration
+	${MV} ${WRKSRC_schema}/* ${WRKSRC}/resource/schema/global
 	${LN} -s ${WRKSRC} ${WRKDIR}/zotero-client
 	${LN} -s ${WRKSRC_build} ${WRKDIR}/zotero-build
 

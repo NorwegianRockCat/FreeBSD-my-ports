@@ -1,4 +1,4 @@
-TIMESTAMP = 1575991576
+TIMESTAMP = 1586609828
 SHA256 (zotero-zotero-5.0.80_GH0.tar.gz) = 9218057a1920a9fd79503ba7bf028ab92a36f28eb48190f93fc26de29582b936
 SIZE (zotero-zotero-5.0.80_GH0.tar.gz) = 5461380
 SHA256 (zotero-zotero-build-2c9869f_GH0.tar.gz) = 726f445b3d68c79e05e8d846e1c89265cc7c8640b5224be74d7f68a573cb8bac
@@ -9,6 +9,8 @@ SHA256 (zotero-translators-46217c2_GH0.tar.gz) = e84dd3e94811f48b5c811322d98d303
 SIZE (zotero-translators-46217c2_GH0.tar.gz) = 1732831
 SHA256 (zotero-bundled-styles-d4c6f38_GH0.tar.gz) = b1fb2af40bd47b20db2a7d0e0973e926ec17a5b17400ea904411567cb457189b
 SIZE (zotero-bundled-styles-d4c6f38_GH0.tar.gz) = 31463
+SHA256 (zotero-zotero-schema-19d26805_GH0.tar.gz) = d09aee7ce03535f52368f403ddbce3fdd63d3d23a678787a6ecd3d3f27058671
+SIZE (zotero-zotero-schema-19d26805_GH0.tar.gz) = 69269
 SHA256 (citation-style-language-locales-9785a6e_GH0.tar.gz) = fdf14a659b25b8d5cdcaff4f916dfae5019293ad11cc90600e52763314d4cb8d
 SIZE (citation-style-language-locales-9785a6e_GH0.tar.gz) = 64357
 SHA256 (egh-zotero-transfw-bd55dc1_GH0.tar.gz) = fac5df72ce5181451e4da77509a900caa25de7c4078b188f4e2b4def6d9fde63
