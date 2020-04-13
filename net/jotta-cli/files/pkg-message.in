@@ -9,7 +9,7 @@ You can make this happen at start up by setting the jottad_enable variable.
 
 # sysrc jottad_enable=YES
 
-Instructions for using the Jottacloud CLI is available on:
+Instructions for using the Jottacloud CLI is available at:
 
   https://docs.jottacloud.com/en/articles/1437248-login-and-basic-use-with-jottacloud-cli
 
