@@ -4,8 +4,9 @@
 PORTNAME=	jotta-cli
 PORTVERSION=	0.6.24251
 CATEGORIES=	net
-MASTER_SITES=	https://repo.jotta.us/archives/freebsd/${ARCH}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}_freebsd_${ARCH}
+MASTER_SITES=	https://repo.jotta.us/archives/freebsd/${ARCH:S|amd64|amd64|:S|i386|386|}/
+
+DISTNAME=	${PORTNAME}-${PORTVERSION}_freebsd_${ARCH:S|amd64|amd64|:S|i386|386|}
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	Jotta Cloud Daemon and Command-Line Interface
@@ -22,6 +23,8 @@ USERS=	jottad
 GROUPS=	jottad
 
 NO_BUILD=	yes
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 USE_RC_SUBR=	jottad
 
