@@ -14,8 +14,6 @@ share/applications/zotero.desktop
 %%DATADIR%%/defaults/preferences/prefs.js
 %%DATADIR%%/defaults/preferences/zotero.js
 %%DATADIR%%/dependentlibs.list
-%%DATADIR%%/dictionaries/en-US.aff
-%%DATADIR%%/dictionaries/en-US.dic
 %%DATADIR%%/extensions/zoteroOpenOfficeIntegration@zotero.org/COPYING
 %%DATADIR%%/extensions/zoteroOpenOfficeIntegration@zotero.org/README.md
 %%DATADIR%%/extensions/zoteroOpenOfficeIntegration@zotero.org/chrome.manifest
@@ -35,6 +33,7 @@ share/applications/zotero.desktop
 %%DATADIR%%/libmozavcodec.so
 %%DATADIR%%/libmozavutil.so
 %%DATADIR%%/libmozgtk.so
+%%DATADIR%%/libmozwayland.so
 %%DATADIR%%/libxul.so
 %%DATADIR%%/omni.ja
 %%DATADIR%%/platform.ini
