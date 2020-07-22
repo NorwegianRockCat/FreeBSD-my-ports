@@ -1,0 +1,26 @@
+diff --git a/GIDs b/GIDs
+index 3cc31edfa19f..997a0258382f 100644
+--- a/GIDs
++++ b/GIDs
+@@ -208,7 +208,7 @@ meta1:*:264:
+ sshout:*:265:
+ step:*:266:
+ odoo:*:267:
+-# free: 268
++jottad:*:268
+ # free: 269
+ # free: 270
+ # free: 271
+diff --git a/UIDs b/UIDs
+index 2806042871bc..923e6870e04a 100644
+--- a/UIDs
++++ b/UIDs
+@@ -213,7 +213,7 @@ meta1:*:264:264::0:0:MeTA1 other:/nonexistent:/usr/sbin/nologin
+ sshout:*:265:265::0:0:Secure Shout Host Oriented Unified Talk:/var/db/sshout:/usr/local/libexec/sshoutd
+ step:*:266:266::0:0:Step CA:/nonexistent:/usr/sbin/nologin
+ odoo:*:267:267::0:0:Odoo ERP:/nonexistent:/usr/sbin/nologin
+-# free: 268
++jottad:*:268:268::0:0:Jotta Cloud Daemon:/nonexisten:/usr/sbin/nologin
+ # free: 269
+ # free: 270
+ # free: 271
