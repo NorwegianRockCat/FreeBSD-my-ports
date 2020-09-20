@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	appmenu-gtk-module
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.3.2
 CATEGORIES=	x11
 
 MAINTAINER=	trueos@norwegianrockcat.com
