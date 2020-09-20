@@ -2,7 +2,7 @@
 
 PORTNAME=	appmenu-gtk-module
 DISTVERSION=	0.7.3
-CATEGORIES=	devel
+CATEGORIES=	x11
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	GTK module for putting application menubar in a global menubar
@@ -10,11 +10,11 @@ COMMENT=	GTK module for putting application menubar in a global menubar
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/subprojects/appmenu-gtk-module/LICENSE
 
-USES=	cmake gnome
+USES=	cmake gnome pkgconfig
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/subprojects/appmenu-gtk-module
 
-USE_GNOME=	gtk30 glib20 gtk20
+USE_GNOME=	gtk30 glib20 gtk20 gdkpixbuf2
 GLIB_SCHEMAS=	org.appmenu.gtk-module.gschema.xml
 
 USE_GITLAB=	yes
