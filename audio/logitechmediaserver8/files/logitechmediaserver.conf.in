@@ -1,0 +1,7 @@
+# newsyslog configuration file for %%PORTNAME%%
+# $FreeBSD: head/audio/logitechmediaserver/files/logitechmediaserver.conf.in 423393 2016-10-05 22:50:25Z woodsb02 $
+#
+# see newsyslog.conf(5) for details
+#
+# logfilename				[owner:group]			mode	count	size	when	flags	[/pid_file]				[sig_num]
+/var/log/%%PORTNAME%%/server.log	%%SLIMUSER%%:%%SLIMGROUP%%	644	3	100	*	J	/var/run/%%PORTNAME%%/%%PORTNAME%%.pid
