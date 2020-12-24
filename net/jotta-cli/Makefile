@@ -1,7 +1,7 @@
 # Created by: Trenton Schulz <trueos@norwegianrockcat.com>
 # $FreeBSD$
 
-PORTNAME=	jotta-cli
+PORTNAME=	jotta_cli
 PORTVERSION=	0.6.24251
 CATEGORIES=	net
 MASTER_SITES=	https://repo.jotta.us/archives/freebsd/${ARCH:S|amd64|amd64|:S|i386|386|}/
