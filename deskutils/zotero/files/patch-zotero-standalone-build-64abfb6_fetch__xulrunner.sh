@@ -1,5 +1,5 @@
---- zotero-standalone-build-249efe4/fetch_xulrunner.sh.orig	2020-07-08 09:59:53 UTC
-+++ zotero-standalone-build-249efe4/fetch_xulrunner.sh
+--- zotero-standalone-build-64abfb6/fetch_xulrunner.sh.orig	2020-10-27 06:43:41 UTC
++++ zotero-standalone-build-64abfb6/fetch_xulrunner.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
@@ -12,18 +12,18 @@
  Options
 - -p PLATFORMS        Platforms to build (m=Mac, w=Windows, l=Linux)
 + -p PLATFORMS        Platforms to build (m=Mac, w=Windows, l=Linux f=FreeBSD)
-  -s                  Skip download; Firefox must already be extracted in xulrunner/ directory
  DONE
  	exit 1
-@@ -35,6 +35,7 @@ DONE
+ }
+@@ -34,6 +34,7 @@ DONE
  BUILD_MAC=0
  BUILD_WIN32=0
  BUILD_LINUX=0
 +BUILD_FREEBSD=0
- skip_download=0
  while getopts "p:s" opt; do
  	case $opt in
-@@ -45,6 +46,7 @@ while getopts "p:s" opt; do
+ 		p)
+@@ -43,6 +44,7 @@ while getopts "p:s" opt; do
  					m) BUILD_MAC=1;;
  					w) BUILD_WIN32=1;;
  					l) BUILD_LINUX=1;;
@@ -31,7 +31,7 @@
  					*)
  						echo "$0: Invalid platform option ${OPTARG:i:1}"
  						usage
-@@ -61,7 +63,7 @@ while getopts "p:s" opt; do
+@@ -55,7 +57,7 @@ while getopts "p:s" opt; do
  done
  
  # Require at least one platform
@@ -40,9 +40,9 @@
  	usage
  fi
  
-@@ -219,6 +221,24 @@ if [ $BUILD_WIN32 == 1 ]; then
- 	if [ $skip_download -eq 0 ]; then
- 		rm "Firefox%20Setup%20$GECKO_VERSION.exe"
+@@ -199,6 +201,24 @@ if [ $BUILD_MAC == 1 ]; then
+ 	if [ ! -e "Firefox $GECKO_VERSION MacOS.zip" ]; then
+ 		rm "MacOS.zip"
  	fi
 +fi
 +
@@ -64,4 +64,4 @@
 +    cd ..
  fi
  
- if [ $BUILD_LINUX == 1 ]; then
+ if [ $BUILD_WIN32 == 1 ]; then

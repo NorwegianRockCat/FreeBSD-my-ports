@@ -1,5 +1,5 @@
---- zotero-standalone-build-249efe4/build.sh.orig	2020-07-08 09:59:53 UTC
-+++ zotero-standalone-build-249efe4/build.sh
+--- zotero-standalone-build-64abfb6/build.sh.orig	2020-10-27 06:43:41 UTC
++++ zotero-standalone-build-64abfb6/build.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash -e
 +#!/usr/local/bin/bash -e
@@ -31,7 +31,7 @@
  	usage
  fi
  
-@@ -639,6 +641,71 @@ if [ $BUILD_LINUX == 1 ]; then
+@@ -642,6 +644,71 @@ if [ $BUILD_LINUX == 1 ]; then
  			rm -f "$DIST_DIR/Zotero-${VERSION}_linux-$arch.tar.bz2"
  			cd "$STAGE_DIR"
  			tar -cjf "$DIST_DIR/Zotero-${VERSION}_linux-$arch.tar.bz2" "Zotero_linux-$arch"
