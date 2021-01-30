@@ -1,10 +1,10 @@
 # $FreeBSD: head/audio/logitechmediaserver/Makefile 534051 2020-05-05 09:23:53Z rene $
 
 PORTNAME=	logitechmediaserver
-PORTVERSION=	8.0.0.eb54a3b
+PORTVERSION=	8.1.1
 CATEGORIES=	audio
 
-MAINTAINER=	trueos@norwegianrockcat.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio streaming server that powers Squeezebox players from Logitech
 
 LICENSE=	SDL
@@ -16,15 +16,13 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	nasm:devel/nasm \
 		bash:shells/bash \
-		rsync:net/rsync \
-		p5-Net-HTTPS-NB>=0.15:net/p5-Net-HTTPS-NB \
-		p5-IO-Socket-SSL>=2.068:security/p5-IO-Socket-SSL
+		rsync:net/rsync
 LIB_DEPENDS=	libgd.so:graphics/gd
 
 USES=		gettext-runtime gmake perl5 shebangfix
 USE_GITHUB=	yes
-GH_TUPLE=	Logitech:slimserver:eb54a3b \
-		Logitech:slimserver-vendor:1a6dc71:vendor
+GH_TUPLE=	Logitech:slimserver:dd356a4 \
+		Logitech:slimserver-vendor:c2162d0:vendor
 USE_RC_SUBR=	logitechmediaserver
 SHEBANG_FILES=	Bin/darwin/check-update.pl \
 		CPAN/Log/Log4perl/Layout/PatternLayout/Multiline.pm \
@@ -55,7 +53,7 @@ USERS=		${SLIMUSER}
 GROUPS=		${SLIMGROUP}
 EXTRA_PATCHES=	${FILESDIR}/vendorpatch-CPAN_buildme.sh
 
-DOCFILES=	Changelog*.html License*.txt
+DOCFILES=	Changelog*.html Installation.txt License*.txt
 CONFFILES=	convert.conf types.conf
 
 PLIST_SUB=	SLIMDIR=${SLIMDIR} \
@@ -126,7 +124,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	${INSTALL_DATA} ${WRKDIR}/logitechmediaserver.conf \
 	    ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/
-#	${INSTALL_SCRIPT} ${WRKSRC}/Bin/dbish ${STAGEDIR}${PREFIX}/${SLIMDIR}/Bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/Bin/dbish ${STAGEDIR}${PREFIX}/${SLIMDIR}/Bin/
 	@${LN} -s ${SLIMDBDIR}/cache ${STAGEDIR}${PREFIX}/${SLIMDIR}/Cache
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

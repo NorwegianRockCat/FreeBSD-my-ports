@@ -1,5 +1,5 @@
-TIMESTAMP = 1601118760
-SHA256 (Logitech-slimserver-8.0.0.eb54a3b-eb54a3b_GH0.tar.gz) = 2c71bce09ab93c3e943cee65efa509d7de8beced05daca53e6a13d9276cb09f7
-SIZE (Logitech-slimserver-8.0.0.eb54a3b-eb54a3b_GH0.tar.gz) = 262037657
-SHA256 (Logitech-slimserver-vendor-1a6dc71_GH0.tar.gz) = 77d91123c5915763166fa2cfeb7066652b53c7e91f51b4d2779bac7d845e1792
-SIZE (Logitech-slimserver-vendor-1a6dc71_GH0.tar.gz) = 148806407
+TIMESTAMP = 1612016807
+SHA256 (Logitech-slimserver-8.1.1-dd356a4_GH0.tar.gz) = 4bb1f1cb5a0bc316c21df035483530adba3b1457ff5fb7c4b74fcb6ac310ded3
+SIZE (Logitech-slimserver-8.1.1-dd356a4_GH0.tar.gz) = 235415646
+SHA256 (Logitech-slimserver-vendor-c2162d0_GH0.tar.gz) = 76e9f42d46eaacb06ad61289a4ba49c9ca3632088f775caaf7342f84142ed326
+SIZE (Logitech-slimserver-vendor-c2162d0_GH0.tar.gz) = 149282739
