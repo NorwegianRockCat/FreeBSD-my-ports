@@ -1,5 +1,5 @@
---- zotero-standalone-build-64abfb6/config.sh.orig	2020-10-27 06:43:41 UTC
-+++ zotero-standalone-build-64abfb6/config.sh
+--- zotero-standalone-build-9d00c5c/config.sh.orig	2020-10-27 06:43:41 UTC
++++ zotero-standalone-build-9d00c5c/config.sh
 @@ -13,6 +13,7 @@ MAC_RUNTIME_PATH="$DIR/xulrunner/Firefox.app"
  WIN32_RUNTIME_PATH="$DIR/xulrunner/firefox-win32"
  LINUX_i686_RUNTIME_PATH="$DIR/xulrunner/firefox-i686"

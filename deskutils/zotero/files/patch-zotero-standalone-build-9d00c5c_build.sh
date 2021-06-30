@@ -1,5 +1,5 @@
---- zotero-standalone-build-64abfb6/build.sh.orig	2020-10-27 06:43:41 UTC
-+++ zotero-standalone-build-64abfb6/build.sh
+--- zotero-standalone-build-9d00c5c/build.sh.orig	2020-10-27 06:43:41 UTC
++++ zotero-standalone-build-9d00c5c/build.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash -e
 +#!/usr/local/bin/bash -e
