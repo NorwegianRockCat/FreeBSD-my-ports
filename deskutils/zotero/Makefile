@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zotero
-PORTVERSION=	5.0.96.2
+PORTVERSION=	5.0.96.3
 CATEGORIES=	deskutils
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -45,16 +45,16 @@ USES+=gnome jpeg sqlite desktop-file-utils shebangfix python xorg
 USE_XORG+=xt x11 xcb pixman xext xrender xdamage xfixes xcomposite
 USE_GNOME+=glib20 gtk20 atk pango gdkpixbuf2 cairo
 USE_GITHUB=	YES
-GH_TUPLE=	zotero:zotero-build:79ff041:build \
-		zotero:zotero-standalone-build:9d00c5c:standalonebuild \
-		zotero:translators:1d1ce61:translators/translators \
-		zotero:bundled-styles:75df0af:styles/styles \
-		zotero:zotero-schema:7a50198:schema \
-		citation-style-language:locales:79c4dba:csl/chrome/content/zotero/locale/csl \
+GH_TUPLE=	zotero:zotero-build:655cd204194f6d3c60cf9b96e7d880e46b29d2fb:build \
+		zotero:zotero-standalone-build:826ae23a6bd1d61eb0d881e38bcdcd9052c1d8bf:standalonebuild \
+		zotero:translators:7a6b54f1cae80d825d8680625ac6a1eb3eab0f8f:translators/translators \
+		zotero:bundled-styles:85ff8fe560bbf23d8a1e28c545866ac776c3dffd:styles/styles \
+		zotero:zotero-schema:97e0a8efa2cb2cf6c9853ceca334ec56180a9df0:schema \
+		citation-style-language:locales:7a507fc0084edea8376ee5345879ddc2c99829ba:csl/chrome/content/zotero/locale/csl \
 		egh:zotero-transfw:bd55dc1:transfw \
 		zotero:zotero-libreoffice-integration:440ce92:libreoffice \
-		zotero:zotero-word-for-mac-integration:da72454:macword \
-		zotero:zotero-word-for-windows-integration:7dec682:winword
+		zotero:zotero-word-for-mac-integration:186b13828d34414ce137be80d7e9f68e40f3bbea:macword \
+		zotero:zotero-word-for-windows-integration:21f9d84156ddb705d55c1bfa3664a40c16ca1645:winword
 
 PATCH_WRKSRC=	${WRKDIR}
 
