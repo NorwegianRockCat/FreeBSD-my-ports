@@ -47,14 +47,14 @@ USE_GNOME+=glib20 gtk20 atk pango gdkpixbuf2 cairo
 USE_GITHUB=	YES
 GH_TUPLE=	zotero:zotero-build:87e125b:build \
 		zotero:zotero-standalone-build:a3587b6:standalonebuild \
-		zotero:note-editor:581c56d:note-editor/note-editor \
-		zotero:pdf-reader:04f474c:pdf-reader/pdf-reader \
-		zotero:pdf-worker:1820c52:pdf-worker/pdf-worker \
+		zotero:note-editor:581c56d:note_editor/note_editor \
+		zotero:pdf-reader:04f474c:pdf_reader/pdf_reader \
+		zotero:pdf-worker:1820c52:pdf_worker/pdf_worker \
 		zotero:translate:4167e5e:translate/chrome/content/zotero/xpcom/translate \
 		zotero:translators:b84fb32:translators/translators \
 		zotero:bundled-styles:085f270:styles/styles \
 		zotero:utilities:df2dda2:utilities/chrome/content/zotero/xpcom/utilities \
-		gildas-lormeau/SingleFile:d447323:SingleFile/resource/SingleFile
+		gildas-lormeau:SingleFile:d447323:SingleFile/resource/SingleFile \
 		zotero:zotero-schema:4277955:schema/resource/schema/global \
 		citation-style-language:locales:c6e38e6:csl/chrome/content/zotero/locale/csl \
 		egh:zotero-transfw:bd55dc1:transfw \
