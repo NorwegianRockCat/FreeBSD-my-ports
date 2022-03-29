@@ -15,7 +15,7 @@ WWW=	https://www.zotero.org
 BUILD_DEPENDS+=	bash:shells/bash \
 		zip:archivers/zip \
 		rsync:net/rsync \
-		npm:www/npm-node10
+		npm:www/npm
 
 LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l \
 		libgraphite2.so:graphics/graphite2 \
@@ -47,16 +47,16 @@ USE_GNOME+=glib20 gtk20 atk pango gdkpixbuf2 cairo
 USE_GITHUB=	YES
 GH_TUPLE=	zotero:zotero-build:87e125b:build \
 		zotero:zotero-standalone-build:a3587b6:standalonebuild \
-		zotero:note-editor:581c56d:note_editor/note_editor \
-		zotero:pdf-reader:04f474c:pdf_reader/pdf_reader \
-		zotero:pdf-worker:1820c52:pdf_worker/pdf_worker \
-		zotero:translate:4167e5e:translate/chrome/content/zotero/xpcom/translate \
+		zotero:note-editor:581c56d:note_editor \
+		zotero:pdf-reader:04f474c:pdf_reader \
+		zotero:pdf-worker:1820c52:pdf_worker \
+		zotero:translate:4167e5e:translate \
 		zotero:translators:b84fb32:translators/translators \
 		zotero:bundled-styles:085f270:styles/styles \
-		zotero:utilities:df2dda2:utilities/chrome/content/zotero/xpcom/utilities \
-		gildas-lormeau:SingleFile:d447323:SingleFile/resource/SingleFile \
-		zotero:zotero-schema:4277955:schema/resource/schema/global \
-		citation-style-language:locales:c6e38e6:csl/chrome/content/zotero/locale/csl \
+		zotero:utilities:df2dda2:utilities \
+		gildas-lormeau:SingleFile:d447323:SingleFile \
+		zotero:zotero-schema:4277955:schema \
+		citation-style-language:locales:c6e38e6:csl \
 		egh:zotero-transfw:bd55dc1:transfw \
 		zotero:zotero-libreoffice-integration:8e12c06:libreoffice \
 		zotero:zotero-word-for-mac-integration:1ec176b:macword \
@@ -72,6 +72,13 @@ post-extract:
 	${MV} ${WRKSRC_winword}/* ${WRKSRC_standalonebuild}/modules/zotero-word-for-windows-integration
 	${MV} ${WRKSRC_macword}/* ${WRKSRC_standalonebuild}/modules/zotero-word-for-mac-integration
 	${MV} ${WRKSRC_schema}/* ${WRKSRC}/resource/schema/global
+	${MV} ${WRKSRC_csl}/* ${WRKSRC}/chrome/content/zotero/locale/csl
+	${MV} ${WRKSRC_note_editor}/* ${WRKSRC}/note-editor
+	${MV} ${WRKSRC_pdf_reader}/* ${WRKSRC}/pdf-reader
+	${MV} ${WRKSRC_pdf_worker}/* ${WRKSRC}/pdf-worker
+	${MV} ${WRKSRC_SingleFile}/* ${WRKSRC}/resource/SingleFile
+	${MV} ${WRKSRC_translate}/* ${WRKSRC}/chrome/content/zotero/xpcom/translate
+	${MV} ${WRKSRC_utilities}/* ${WRKSRC}/chrome/content/zotero/xpcom/utilities
 	${LN} -s ${WRKSRC} ${WRKDIR}/zotero-client
 	${LN} -s ${WRKSRC_build} ${WRKDIR}/zotero-build
 

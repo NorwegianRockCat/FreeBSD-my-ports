@@ -1,5 +1,5 @@
---- zotero-standalone-build-826ae23/fetch_xulrunner.sh.orig	2020-10-27 06:43:41 UTC
-+++ zotero-standalone-build-826ae23/fetch_xulrunner.sh
+--- zotero-standalone-build-a3587b6/fetch_xulrunner.sh.orig	2020-10-27 06:43:41 UTC
++++ zotero-standalone-build-a3587b6/fetch_xulrunner.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
