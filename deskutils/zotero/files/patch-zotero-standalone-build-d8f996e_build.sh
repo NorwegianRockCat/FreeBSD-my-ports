@@ -1,5 +1,5 @@
---- zotero-standalone-build-a3587b6/build.sh.orig	2022-03-22 08:30:00 UTC
-+++ zotero-standalone-build-a3587b6/build.sh
+--- zotero-standalone-build-d8f996e/build.sh.orig	2022-03-22 08:30:00 UTC
++++ zotero-standalone-build-d8f996e/build.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash -e
 +#!/usr/local/bin/bash -e

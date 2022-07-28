@@ -1,5 +1,5 @@
---- zotero-standalone-build-a3587b6/fetch_xulrunner.sh.orig	2020-10-27 06:43:41 UTC
-+++ zotero-standalone-build-a3587b6/fetch_xulrunner.sh
+--- zotero-standalone-build-d8f996e/fetch_xulrunner.sh.orig	2020-10-27 06:43:41 UTC
++++ zotero-standalone-build-d8f996e/fetch_xulrunner.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
@@ -51,9 +51,9 @@
 +    rm -rf firefox
 +    rm -rf freebsd-pkg-foo
 +
-+    cp $WRKDIR/../firefox-$GECKO_VERSION.txz $WRKDIR
++    cp $WRKDIR/../firefox-$GECKO_VERSION.pkg $WRKDIR
 +    mkdir freebsd-pkg-foo
-+    tar -xf $WRKDIR/firefox-$GECKO_VERSION.txz --strip-components 3 -C freebsd-pkg-foo
++    tar -xf $WRKDIR/firefox-$GECKO_VERSION.pkg --strip-components 3 -C freebsd-pkg-foo
 +    mv freebsd-pkg-foo/lib/firefox firefox
 +    arch=amd64
 +    rm -rf firefox-$arch
