@@ -43,7 +43,7 @@ LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l \
 
 USES+=gnome jpeg sqlite desktop-file-utils shebangfix python xorg
 USE_XORG+=xt x11 xcb pixman xext xrender xdamage xfixes xcomposite
-USE_GNOME+=glib20 gtk20 atk pango gdkpixbuf2 cairo
+USE_GNOME+=glib20 gtk20 atk pango gdkpixbuf2 cairo gtk30
 USE_GITHUB=	YES
 
 GH_TUPLE=       \
@@ -59,8 +59,6 @@ GH_TUPLE=       \
                 zotero:note-editor:5920f9674eeef6da5b43128248b82033cbd0c471:zotero_note_editor/note-editor \
                 zotero:utilities:4d8d7d3e92cbc3b4d62b82478e212a6f63b9a35f:zotero_utilities/chrome/content/zotero/xpcom/utilities \
                 zotero:translate:1de1a0e56d2b7d7a93e75d3cbe426aa3ad4291d3:zotero_translate/chrome/content/zotero/xpcom/translate \
-                zotero:pdf.js:0b0ca1a3dd6067b8f8644dcbd7fc0c25d790386e:zotero_pdf_js/pdf-worker/pdf.js \
-                behdad:fonttools:8388a2e37ce349dac6555bb824c82723e3b65fbf:behdad_fonttools/pdf-worker/pdf.js/test/ttx/fonttools-code \
                 behdad:fonttools:8388a2e37ce349dac6555bb824c82723e3b65fbf:behdad_fonttools/pdf-reader/pdf.js/test/ttx/fonttools-code \
                 zotero:pdf.js:0b0ca1a3dd6067b8f8644dcbd7fc0c25d790386e:zotero_pdf_js/pdf-reader/pdf.js \
 		zotero:zotero-build:00e854c:build \
@@ -74,29 +72,26 @@ PATCH_WRKSRC=	${WRKDIR}
 
 INSTALL_TARGET=	install-strip
 
+# There is some sort of things that are going wrong with pdf-reader. So, do so playing around since I'm unsure what is going wrong
 post-extract:
 	${MV} ${WRKSRC_transfw}/* ${WRKSRC_build}/xpi/zotero-transfw
 	${MV} ${WRKSRC_libreoffice}/* ${WRKSRC_standalonebuild}/modules/zotero-libreoffice-integration
 	${MV} ${WRKSRC_winword}/* ${WRKSRC_standalonebuild}/modules/zotero-word-for-windows-integration
 	${MV} ${WRKSRC_macword}/* ${WRKSRC_standalonebuild}/modules/zotero-word-for-mac-integration
-#	${MV} ${WRKSRC_schema}/* ${WRKSRC}/resource/schema/global
-#	${MV} ${WRKSRC_csl}/* ${WRKSRC}/chrome/content/zotero/locale/csl
-#	${MV} ${WRKSRC_note_editor}/* ${WRKSRC}/note-editor
-#	${MV} ${WRKSRC_pdf_reader}/* ${WRKSRC}/pdf-reader
-#	${MV} ${WRKSRC_pdf_worker}/* ${WRKSRC}/pdf-worker
-#	${MV} ${WRKSRC_pdf_worker}/* ${WRKSRC}/pdf-worker/pdf.js
-#	${MV} ${WRKSRC_SingleFile}/* ${WRKSRC}/resource/SingleFile
-#	${MV} ${WRKSRC_translate}/* ${WRKSRC}/chrome/content/zotero/xpcom/translate
-#	${MV} ${WRKSRC_utilities}/* ${WRKSRC}/chrome/content/zotero/xpcom/utilities
+	${CP} -R ${WRKSRC_zotero_pdf_reader}/pdf.js ${WRKSRC}/pdf-worker
+	${MV} ${WRKSRC}/pdf-reader/pdf.js ${WRKSRC}/pdf-reader/pdf.js.unsure
+	${CP} -R ${WRKSRC_zotero_pdf_reader}/pdf-reader*/ ${WRKSRC}/pdf-reader
+	${RMDIR} ${WRKSRC}/pdf-reader/pdf.js
+	${MV} ${WRKSRC}/pdf-reader/pdf.js.unsure ${WRKSRC}/pdf-reader/pdf.js
 	${LN} -s ${WRKSRC} ${WRKDIR}/zotero-client
 	${LN} -s ${WRKSRC_build} ${WRKDIR}/zotero-build
 
 do-configure:
-	cd ${WRKSRC} && \
+	PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true cd ${WRKSRC} && \
 		npm install --legacy-peer-dep
 
 do-build:
-	cd ${WRKSRC} && \
+	PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true cd ${WRKSRC} && \
 		npm run build
 	cd ${WRKSRC_standalonebuild} && \
 		${SETENV} WRKDIR=${WRKDIR} ./fetch_xulrunner.sh -p f
