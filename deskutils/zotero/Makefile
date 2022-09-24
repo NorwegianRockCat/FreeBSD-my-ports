@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zotero
-PORTVERSION=	6.0.11
+PORTVERSION=	6.0.13
 CATEGORIES=	deskutils
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -47,26 +47,26 @@ USE_GNOME+=glib20 gtk20 atk pango gdkpixbuf2 cairo gtk30
 USE_GITHUB=	YES
 
 GH_TUPLE=       \
-		zotero:utilities:44f9c8dd253627e35ba6e7932e92dc6c40f206a2:zotero_utilities/chrome/content/zotero/xpcom/translate/modules/utilities \
+		zotero:utilities:d4e514c:zotero_utilities/chrome/content/zotero/xpcom/translate/modules/utilities \
                 zotero:zotero-schema:628358f04b967a7669063cc3713d6fe593750570:zotero_zotero_schema/chrome/content/zotero/xpcom/utilities/resource/schema/global \
-                zotero:translators:62969db2cf9b69565497167fda1358542401a9c8:zotero_translators/translators \
+                zotero:translators:4207a89:zotero_translators/translators \
                 citation-style-language:locales:e637746677fd1f600173e07b561f0388284ae39b:citation_style_language_locales/chrome/content/zotero/locale/csl \
-                zotero:bundled-styles:d7d906e07e4fc9d46575cc1066002cf4558bd840:zotero_bundled_styles/styles \
-                zotero:zotero-schema:634ba4f99bfd06f4b5b8c88879ff65e2dfd410b3:zotero_zotero_schema/resource/schema/global \
+                zotero:bundled-styles:d7d906e:zotero_bundled_styles/styles \
+                zotero:zotero-schema:16209600854fd472fc3188290b2228dec9c19adc:zotero_zotero_schema/resource/schema/global \
                 gildas-lormeau:SingleFile:45519bb2f7ee2ddce85382eea1b7b3aceca43fc2:gildas_lormeau_SingleFile/resource/SingleFile \
-                zotero:pdf-reader:e4b1d28e36169cfe498e30ecc17c234207f3b9d6:zotero_pdf_reader/pdf-reader \
+                zotero:pdf-reader:7f17b3e:zotero_pdf_reader/pdf-reader \
                 zotero:pdf-worker:a5b612c866b11b3625605e840cc1d27d610b65e7:zotero_pdf_worker/pdf-worker \
                 zotero:note-editor:5920f9674eeef6da5b43128248b82033cbd0c471:zotero_note_editor/note-editor \
                 zotero:utilities:4d8d7d3e92cbc3b4d62b82478e212a6f63b9a35f:zotero_utilities/chrome/content/zotero/xpcom/utilities \
                 zotero:translate:1de1a0e56d2b7d7a93e75d3cbe426aa3ad4291d3:zotero_translate/chrome/content/zotero/xpcom/translate \
-                behdad:fonttools:8388a2e37ce349dac6555bb824c82723e3b65fbf:behdad_fonttools/pdf-reader/pdf.js/test/ttx/fonttools-code \
-                zotero:pdf.js:0b0ca1a3dd6067b8f8644dcbd7fc0c25d790386e:zotero_pdf_js/pdf-reader/pdf.js \
+                behdad:fonttools:8388a2e:behdad_fonttools/pdf-reader/pdf.js/test/ttx/fonttools-code \
+                zotero:pdf.js:7ea75b5:zotero_pdf_js/pdf-reader/pdf.js \
 		zotero:zotero-build:00e854c:build \
-		zotero:zotero-standalone-build:d8f996e:standalonebuild \
+		zotero:zotero-standalone-build:4486a69:standalonebuild \
 		egh:zotero-transfw:bd55dc1:transfw \
 		zotero:zotero-libreoffice-integration:8e12c06:libreoffice \
-		zotero:zotero-word-for-mac-integration:bdc88a0:macword \
-		zotero:zotero-word-for-windows-integration:accfbdb:winword
+		zotero:zotero-word-for-mac-integration:ab97a23:macword \
+		zotero:zotero-word-for-windows-integration:1e34709:winword
 
 PATCH_WRKSRC=	${WRKDIR}
 
