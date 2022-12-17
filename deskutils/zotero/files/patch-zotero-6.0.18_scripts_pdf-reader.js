@@ -1,5 +1,5 @@
---- zotero-6.0.13/scripts/pdf-reader.js.orig	2022-08-27 12:06:06 UTC
-+++ zotero-6.0.13/scripts/pdf-reader.js
+--- zotero-6.0.18/scripts/pdf-reader.js.orig	2022-08-27 12:06:06 UTC
++++ zotero-6.0.18/scripts/pdf-reader.js
 @@ -36,7 +36,7 @@ async function getPDFReader(signatures) {
  			await fs.remove(path.join(targetDir, 'zotero'));
  		}

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zotero
-PORTVERSION=	6.0.13
+PORTVERSION=	6.0.18
 CATEGORIES=	deskutils
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -47,26 +47,26 @@ USE_GNOME+=glib20 gtk20 atk pango gdkpixbuf2 cairo gtk30
 USE_GITHUB=	YES
 
 GH_TUPLE=       \
-		zotero:utilities:d4e514c:zotero_utilities/chrome/content/zotero/xpcom/translate/modules/utilities \
-                zotero:zotero-schema:628358f04b967a7669063cc3713d6fe593750570:zotero_zotero_schema/chrome/content/zotero/xpcom/utilities/resource/schema/global \
-                zotero:translators:4207a89:zotero_translators/translators \
-                citation-style-language:locales:e637746677fd1f600173e07b561f0388284ae39b:citation_style_language_locales/chrome/content/zotero/locale/csl \
-                zotero:bundled-styles:d7d906e:zotero_bundled_styles/styles \
-                zotero:zotero-schema:16209600854fd472fc3188290b2228dec9c19adc:zotero_zotero_schema/resource/schema/global \
-                gildas-lormeau:SingleFile:45519bb2f7ee2ddce85382eea1b7b3aceca43fc2:gildas_lormeau_SingleFile/resource/SingleFile \
-                zotero:pdf-reader:7f17b3e:zotero_pdf_reader/pdf-reader \
-                zotero:pdf-worker:a5b612c866b11b3625605e840cc1d27d610b65e7:zotero_pdf_worker/pdf-worker \
-                zotero:note-editor:5920f9674eeef6da5b43128248b82033cbd0c471:zotero_note_editor/note-editor \
-                zotero:utilities:4d8d7d3e92cbc3b4d62b82478e212a6f63b9a35f:zotero_utilities/chrome/content/zotero/xpcom/utilities \
-                zotero:translate:1de1a0e56d2b7d7a93e75d3cbe426aa3ad4291d3:zotero_translate/chrome/content/zotero/xpcom/translate \
-                behdad:fonttools:8388a2e:behdad_fonttools/pdf-reader/pdf.js/test/ttx/fonttools-code \
-                zotero:pdf.js:7ea75b5:zotero_pdf_js/pdf-reader/pdf.js \
+		zotero:utilities:3143d55:zotero_utilities/chrome/content/zotero/xpcom/translate/modules/utilities \
+                zotero:zotero-schema:c9f6c78:zotero_zotero_schema/chrome/content/zotero/xpcom/utilities/resource/schema/global \
+                zotero:translators:8c9da9b034a851c2d22e15aa3c31206d1f2b0f06:zotero_translators/translators \
+                citation-style-language:locales:e243665390f80c67487df7295938680142bb9570:citation_style_language_locales/chrome/content/zotero/locale/csl \
+                zotero:bundled-styles:d230dc72e9e0622bbf89eb83a223f89bc6ff07f0:zotero_bundled_styles/styles \
+                zotero:zotero-schema:c9f6c78:zotero_zotero_schema/resource/schema/global \
+                gildas-lormeau:SingleFile:0496d2d682babca16f7f2bf56f9428448cd9961f:gildas_lormeau_SingleFile/resource/SingleFile \
+                zotero:pdf-reader:c549f77:zotero_pdf_reader/pdf-reader \
+                zotero:pdf-worker:e9160562148a52edac5e1623133833f139ea1cb9:zotero_pdf_worker/pdf-worker \
+                zotero:note-editor:093ff40b1c011579e98e5266c9762979bcd8059d:zotero_note_editor/note-editor \
+                zotero:utilities:3143d55:zotero_utilities/chrome/content/zotero/xpcom/utilities \
+                zotero:translate:586a893ee2e0b4e6d5c6afeac3dada8fb1ac556f:zotero_translate/chrome/content/zotero/xpcom/translate \
+                fonttools:fonttools:66a3ec90713375aec5a95d1698ef1521fd432918:fonttools_fonttools/pdf-reader/pdf.js/test/ttx/fonttools-code \
+                zotero:pdf.js:fdde957:zotero_pdf_js/pdf-reader/pdf.js \
 		zotero:zotero-build:00e854c:build \
-		zotero:zotero-standalone-build:4486a69:standalonebuild \
+		zotero:zotero-standalone-build:fd20ee4:standalonebuild \
 		egh:zotero-transfw:bd55dc1:transfw \
-		zotero:zotero-libreoffice-integration:8e12c06:libreoffice \
-		zotero:zotero-word-for-mac-integration:ab97a23:macword \
-		zotero:zotero-word-for-windows-integration:1e34709:winword
+		zotero:zotero-libreoffice-integration:1d747aad99ef48099cc23ab8904b2b84f919e07b:libreoffice \
+		zotero:zotero-word-for-mac-integration:ce04963:macword \
+		zotero:zotero-word-for-windows-integration:c8a6407:winword
 
 PATCH_WRKSRC=	${WRKDIR}
 
