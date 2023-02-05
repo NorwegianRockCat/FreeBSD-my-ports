@@ -1,5 +1,5 @@
---- zotero-6.0.18/scripts/pdf-worker.js.orig	2022-08-27 12:07:39 UTC
-+++ zotero-6.0.18/scripts/pdf-worker.js
+--- zotero-6.0.20/scripts/pdf-worker.js.orig	2022-08-27 12:07:39 UTC
++++ zotero-6.0.20/scripts/pdf-worker.js
 @@ -33,7 +33,7 @@ async function getPDFWorker(signatures) {
  			);
  		}
