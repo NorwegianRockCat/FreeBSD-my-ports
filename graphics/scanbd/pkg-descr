@@ -15,5 +15,3 @@ signaling of dynamic device insertion / removal (libudev, dbus, hal)
 scanbd supports this as well. scanbd can use all sane-backends or some
 special backends from the (old) scanbuttond project. Supported
 platforms: Linux, FreeBSD, NetBSD, OpenBSD
-
-WWW: https://sourceforge.net/projects/scanbd/

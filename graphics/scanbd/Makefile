@@ -1,6 +1,3 @@
-# Created by: Trenton Schulz <trueos@norwegianrockcat.com>
-# $FreeBSD$
-
 PORTNAME=	scanbd
 PORTVERSION=	1.5.1
 CATEGORIES=	graphics
@@ -8,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/releases
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	Scanbd is a scanner button daemon looking for scanner button pressed
+WWW=	https://sourceforge.net/projects/scanbd/
 
 LICENSE=	GPLv2
 
@@ -22,6 +20,7 @@ USES=	gettext-runtime gmake pkgconfig shebangfix tar:tgz
 WRKSRC=	${WRKDIR}/${PORTVERSION}
 
 GNU_CONFIGURE=	yes
+
 CONFIGURE_ARGS+=	--with-user --with-group
 
 SHEBANG_GLOB= *.script
